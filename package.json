@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "prepare": "husky install",
+    "test": "jest",
     "commit": "git-cz"
   },
   "dependencies": {
@@ -18,11 +19,14 @@
   "devDependencies": {
     "@commitlint/cli": "^16.0.2",
     "@commitlint/config-conventional": "^16.0.0",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
     "@types/node": "17.0.8",
     "@types/react": "17.0.38",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
     "autoprefixer": "^10.4.2",
+    "babel-jest": "^27.4.6",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.28.0",
@@ -33,6 +37,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.4",
+    "jest": "^27.4.7",
     "postcss": "^8.4.5",
     "prettier": "^2.2.1",
     "tailwindcss": "^3.0.13",
@@ -42,5 +47,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "license": "MIT"
 }

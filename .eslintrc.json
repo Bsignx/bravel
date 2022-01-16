@@ -50,7 +50,7 @@
       {
         "newlinesBetween": "always",
         "groups": [
-          ["/^react/"],
+          ["/^react/", "/^next/"],
           ["module"],
           ["/^~//"],
           ["parent", "sibling", "index"]

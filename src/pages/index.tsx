@@ -1,8 +1,7 @@
 import type { NextPage } from 'next'
 
 import { Thing } from '@bsignx/bravel-ui'
-
-import { strings } from '../translations'
+import { strings } from '@translations/index'
 
 const Home: NextPage = () => {
   return (

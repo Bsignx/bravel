@@ -1,14 +1,13 @@
 import { createContext, ReactNode, useContext, useState } from 'react'
 
+import AuthService from '@services/auth'
 import { User } from 'firebase/auth'
-
-import AuthService from '../services/auth'
 
 type AuthProviderProps = {
   children: ReactNode
 }
 
-type AuthContextType = {
+export type AuthContextType = {
   user: User | null
   error: string | null
   loginWithGoogle: () => Promise<void>

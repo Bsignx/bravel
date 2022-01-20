@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useState } from 'react'
 
-import { useAuth } from '../contexts/auth'
-import AuthService from '../services/auth'
+import { useAuth } from '@contexts/auth'
+import AuthService from '@services/auth'
 
 type AuthProviderProps = {
   children: ReactNode

@@ -1,9 +1,9 @@
 import { NextPage } from 'next'
 
-import { useAuth } from 'contexts/auth'
+import { PageProps, withoutAuth } from '@utils/route'
 
-const Login: NextPage = () => {
-  const { user, loginWithGoogle, error } = useAuth()
+const Login: NextPage<PageProps> = ({ auth }) => {
+  const { user, loginWithGoogle, error } = auth
 
   return (
     <div>
@@ -14,4 +14,4 @@ const Login: NextPage = () => {
   )
 }
 
-export default Login
+export default withoutAuth(Login)

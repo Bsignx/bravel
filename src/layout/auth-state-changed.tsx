@@ -12,8 +12,8 @@ export const AuthStateChanged = ({ children }: AuthProviderProps) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    AuthService.waitForUser((userCred) => {
-      setUser(userCred)
+    AuthService.waitForUser((userCredentials) => {
+      setUser(userCredentials)
       setLoading(false)
     })
   }, [setUser])

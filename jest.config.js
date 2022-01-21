@@ -2,7 +2,9 @@ module.exports = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['./jest.setup.js'],
   collectCoverage: true,
-  coverageDirectory: 'coverage',
+  modulePaths: ['<rootDir>/src/'],
+  collectCoverageFrom: ['src/**/*.ts(x)?'],
+  modulePathIgnorePatterns: ['<rootDir>/.next/'],
   moduleNameMapper: {
     '^@components(.*)$': '<rootDir>/src/components$1',
     '^@pages(.*)$': '<rootDir>/src/pages$1',

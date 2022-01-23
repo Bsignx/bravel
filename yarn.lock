@@ -315,10 +315,12 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bsignx/bravel-ui@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@bsignx/bravel-ui/-/bravel-ui-1.0.0.tgz#bc9de9e505b5173da735d55ef940fad4a0349141"
-  integrity sha512-zwbzk8T0mzibxn6j9Znal3nsuMlFodWrSFky95AgGC9L41dC0/6RCLScPVUNUFpiWXA8YfZaAgKQpz5nCw13ZQ==
+"@bsignx/bravel-ui@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@bsignx/bravel-ui/-/bravel-ui-1.1.0.tgz#3c60f5b201d05e5020a71ef0c2c5d058ffb745e0"
+  integrity sha512-1VPXZu2aCLQA/3non7zs/cLFAmIjfWpfhLvGIBOTkwAaF+uPagqxWe/43F7ff74XwG2f4YcHFwsfGb2axgABbw==
+  dependencies:
+    "@headlessui/react" "^1.4.3"
   optionalDependencies:
     chokidar "^3.5.2"
     esbuild "^0.14.11"
@@ -911,6 +913,11 @@
     long "^4.0.0"
     protobufjs "^6.10.0"
     yargs "^16.2.0"
+
+"@headlessui/react@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.4.3.tgz#f77c6bb5cb4a614a5d730fb880cab502d48abf37"
+  integrity sha512-n2IQkaaw0aAAlQS5MEXsM4uRK+w18CrM72EqnGRl/UBOQeQajad8oiKXR9Nk15jOzTFQjpxzrZMf1NxHidFBiw==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"

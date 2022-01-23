@@ -19,7 +19,7 @@
     "test:e2e:ci": "start-server-and-test start 3000 cy:run"
   },
   "dependencies": {
-    "@bsignx/bravel-ui": "^1.0.0",
+    "@bsignx/bravel-ui": "^1.1.0",
     "firebase": "^9.6.3",
     "next": "12.0.8",
     "react": "17.0.2",

@@ -5,14 +5,11 @@ import { ToggleSwitch } from '@bsignx/bravel-ui'
 import { strings } from '@translations/index'
 
 const Home: NextPage = () => {
-  const [checked, setChecked] = useState<boolean>(false)
+  const [checked, setChecked] = useState(false)
   return (
     <>
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <ToggleSwitch
-        enabled={checked}
-        onChange={(value: boolean) => setChecked(value)}
-      />
+      <ToggleSwitch enabled={checked} onChange={(value) => setChecked(value)} />
       {strings.test}
     </>
   )

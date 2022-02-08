@@ -65,8 +65,6 @@
     }
   },
   "lint-staged": {
-    "*.@(ts|tsx)": [
-      "npm run test --passWithNoTests --bail --findRelatedTests"
-    ]
+    "*.@(ts|tsx)": []
   }
 }

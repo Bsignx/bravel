@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 
-import { PageProps, withoutAuth } from '@utils/route'
+import { PageProps, withoutAuth } from 'features/auth/auth-route'
 
 const Login: NextPage<PageProps> = ({ auth }) => {
   const { user, loginWithGoogle, error } = auth

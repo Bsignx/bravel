@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import React from 'react'
 
-import { AuthContextType, useAuth } from '@contexts/auth'
+import { AuthContextType, useAuth } from 'features/auth/auth-context'
 
 export type PageProps = { auth: AuthContextType }
 

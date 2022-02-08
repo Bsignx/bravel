@@ -1,8 +1,8 @@
 import { NextPage } from 'next'
 
-import { PageProps, withAuth } from '@utils/route'
+import { PageProps, withAuth } from 'features/auth/auth-route'
 
-const Test: NextPage<PageProps> = ({ auth }) => {
+const Discover: NextPage<PageProps> = ({ auth }) => {
   const { user, logout } = auth
   return (
     <div>
@@ -12,4 +12,4 @@ const Test: NextPage<PageProps> = ({ auth }) => {
   )
 }
 
-export default withAuth(Test)
+export default withAuth(Discover)

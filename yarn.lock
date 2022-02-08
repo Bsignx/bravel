@@ -315,10 +315,10 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
-"@bsignx/bravel-ui@^1.1.0":
-  "integrity" "sha512-1VPXZu2aCLQA/3non7zs/cLFAmIjfWpfhLvGIBOTkwAaF+uPagqxWe/43F7ff74XwG2f4YcHFwsfGb2axgABbw=="
-  "resolved" "https://registry.npmjs.org/@bsignx/bravel-ui/-/bravel-ui-1.1.0.tgz"
-  "version" "1.1.0"
+"@bsignx/bravel-ui@^1.4.0":
+  "integrity" "sha512-WMtKJM7YhzYDmF5sup1qviIk/3fQwnFNdNqt0y+ZV7nv47hmm4y/aDw5hz2Hv+ZnkJgCApcoe7pAOEiMUZr7dg=="
+  "resolved" "https://registry.npmjs.org/@bsignx/bravel-ui/-/bravel-ui-1.4.0.tgz"
+  "version" "1.4.0"
   dependencies:
     "@headlessui/react" "^1.4.3"
   optionalDependencies:

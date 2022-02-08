@@ -1,14 +1,9 @@
 import type { NextPage } from 'next'
 
-import { strings } from '@translations/index'
+import { LandingTemplate } from 'templates/landing'
 
 const Landing: NextPage = () => {
-  return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      {strings.test}
-    </>
-  )
+  return <LandingTemplate />
 }
 
 export default Landing

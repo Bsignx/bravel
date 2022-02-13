@@ -11,7 +11,7 @@ export const LandingMenu = () => {
   const { t } = useTranslation('landing-page')
 
   return (
-    <Container className="flex justify-between pt-6">
+    <Container as="header" className="mb-32 flex justify-between pt-6">
       <Link href="/landing">
         <a>
           <BravelLogo />

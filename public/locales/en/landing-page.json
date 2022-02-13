@@ -7,5 +7,29 @@
   "hero_button": "Search for a group",
   "hero_subtitle": "Bravel is a platform that can connect your desire to train to other people",
   "hero_image_alt": "People exercising",
-  "hero_input_placeholder": "Search for a group"
+  "hero_input_placeholder": "Search for a group",
+  "features_title": "How Bravel works",
+  "features_subtitle": "Bravel is a platform that can connect your desire to train to other people",
+  "features_1_title": "Join a group",
+  "features_1_description": "Do what you love, meet others who love it, find your community and evolve together. The rest is history!",
+  "features_2_title": "Find an event",
+  "features_2_description": "Events are happening on just about any topic you can think of, from soccer and calisthenics to yoga and hiking.",
+  "features_3_title": "Start a group",
+  "features_3_description": "You don’t have to be an expert to gather people together and explore shared interests.",
+  "group_categories_title": "Some of the training groups categories",
+  "group_categories_subtitle": "Some of the most popular training group categories",
+  "group_categories": {
+    "1": "Basketball",
+    "2": "Football",
+    "3": "Volleyball",
+    "4": "Rugby",
+    "5": "Esports",
+    "6": "MMA",
+    "7": "Tennis",
+    "8": "Athletics",
+    "9": "Golf",
+    "10": "Bike",
+    "11": "Yoga",
+    "12": "Skateboard"
+  }
 }

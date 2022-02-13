@@ -7,5 +7,30 @@
   "hero_button": "Pesquisar um grupo",
   "hero_subtitle": "Bravel é uma plataforma que pode conectar seu desejo de treinar a outras pessoas",
   "hero_image_alt": "Pessoas se exercitando",
-  "hero_input_placeholder": "Pesquisar um grupo"
+  "hero_input_placeholder": "Pesquisar um grupo",
+  "features_title": "Como o Bravel funciona",
+  "features_subtitle": "Bravel é uma plataforma que pode conectar seu desejo de treinar a outras pessoas",
+  "features_1_title": "Entrar em um grupo",
+  "features_1_description": "Faça o que você ama, conheça outras pessoas que amam, encontre sua comunidade e evolua juntos. O resto é história!",
+  "features_2_title": "Encontrar um evento",
+  "features_2_description": "Eventos estão acontecendo em praticamente qualquer assunto que você possa imaginar, de futebol e calistenia a ioga e caminhadas.",
+  "features_3_title": "Iniciar um grupo",
+  "features_3_description": "Você não precisa ser um especialista para reunir pessoas e explorar interesses compartilhados.",
+  "group_categories_title": "Algumas das categorias de grupos de treinamento",
+  "group_categories_subtitle": "Algumas das categorias de grupos de treinamento mais populares",
+  "group_categories": {
+    "1": "Basquete",
+    "2": "Futebol",
+    "3": "Vôlei",
+    "4": "Rúgbi",
+    "5": "Esports",
+    "6": "MMA",
+    "7": "Tênis",
+    "8": "Atletismo",
+    "9": "Golfe",
+    "10": "Bicicleta",
+    "11": "Yoga",
+    "12": "Skate"
+  }
 }
+

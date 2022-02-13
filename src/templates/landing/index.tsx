@@ -1,10 +1,9 @@
-import { strings } from '@translations/index'
+import { LandingMenu } from '@components/landing-menu'
 
 export const LandingTemplate = () => {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      {strings.test}
-    </>
+    <div className="h-screen bg-gray900">
+      <LandingMenu />
+    </div>
   )
 }

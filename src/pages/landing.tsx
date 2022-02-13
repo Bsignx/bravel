@@ -10,8 +10,7 @@ const Landing: NextPage = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['landing'])),
-      // Will be passed to the page component as props
+      ...(await serverSideTranslations(locale, ['landing-page'])),
     },
   }
 }

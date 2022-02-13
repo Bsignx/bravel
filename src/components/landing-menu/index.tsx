@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 
 import { Button } from '@bsignx/bravel-ui'
@@ -7,11 +8,16 @@ import { Globe } from '@styled-icons/bootstrap/Globe'
 import { LocaleSwitcher } from 'features/translate/locale-switcher'
 
 export const LandingMenu = () => {
-  const { t } = useTranslation('landing')
+  const { t } = useTranslation('landing-page')
 
   return (
     <Container className="flex justify-between pt-6">
-      <BravelLogo />
+      <Link href="/landing">
+        <a>
+          <BravelLogo />
+        </a>
+      </Link>
+
       <div className="flex">
         <LocaleSwitcher>
           <Button
@@ -20,14 +26,22 @@ export const LandingMenu = () => {
             icon={<Globe size={20} />}
             className="mr-2"
           >
-            {t('hero_title')}
+            {t('translate-button')}
           </Button>
         </LocaleSwitcher>
         <nav>
-          <Button variant="primary" plain className="mr-2">
-            a
-          </Button>
-          <Button variant="tertiary">a</Button>
+          <Link href="/">
+            <a>
+              <Button variant="primary" plain className="mr-2">
+                {t('login-button')}
+              </Button>
+            </a>
+          </Link>
+          <Link href="/">
+            <a>
+              <Button variant="tertiary">{t('signup-button')}</Button>
+            </a>
+          </Link>
         </nav>
       </div>
     </Container>

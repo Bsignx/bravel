@@ -12,26 +12,17 @@ export const LocaleSwitcher = ({ children }: LocaleSwitcherProps) => {
   const otherLocales = locales?.filter((locale) => locale !== activeLocale)
 
   return (
-    <div>
-      <p>Locale switcher:</p>
-
-      <ul>
-        {otherLocales?.map((locale) => {
-          const { pathname, query, asPath } = router
-          return (
-            <li key={locale}>
-              <Link
-                href={{ pathname, query }}
-                as={asPath}
-                locale={locale}
-                passHref
-              >
-                {children}
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
-    </div>
+    <ul>
+      {otherLocales?.map((locale) => {
+        const { pathname, query, asPath } = router
+        return (
+          <li key={locale}>
+            <Link href={{ pathname, query }} as={asPath} locale={locale}>
+              <a>{children}</a>
+            </Link>
+          </li>
+        )
+      })}
+    </ul>
   )
 }

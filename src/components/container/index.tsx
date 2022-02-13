@@ -1,26 +1,35 @@
-import { ComponentProps, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
 
 import { cls } from '@utils/helpers/cls'
 
-type ContainerProps = {
+type ContainerOwnProp<E extends ElementType> = {
   children: ReactNode
   className?: string
-} & ComponentProps<'div'>
+  as?: E
+}
 
-export const Container = ({
+type ContainerProps<E extends ElementType> = ContainerOwnProp<E> &
+  Omit<ComponentPropsWithoutRef<E>, keyof ContainerOwnProp<E>>
+
+export const Container = <E extends ElementType = 'div'>({
   children,
   className = '',
+  as,
   ...props
-}: ContainerProps) => (
-  <div
-    className={cls(
-      `
+}: ContainerProps<E>) => {
+  const Component = as || 'div'
+
+  return (
+    <Component
+      className={cls(
+        `
         container mx-auto
         ${className}
       `
-    )}
-    {...props}
-  >
-    {children}
-  </div>
-)
+      )}
+      {...props}
+    >
+      {children}
+    </Component>
+  )
+}

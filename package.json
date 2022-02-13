@@ -19,12 +19,15 @@
     "test:e2e:ci": "start-server-and-test start 3000 cy:run"
   },
   "dependencies": {
-    "@bsignx/bravel-ui": "^1.4.0",
+    "@bsignx/bravel-ui": "^1.5.2",
+    "@styled-icons/bootstrap": "^10.34.0",
     "firebase": "^9.6.3",
+    "i18next": "^21.6.11",
     "next": "12.0.8",
+    "next-i18next": "^10.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-localization": "^1.0.17"
+    "react-i18next": "^11.15.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.0.2",

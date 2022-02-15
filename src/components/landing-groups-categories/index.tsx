@@ -9,51 +9,51 @@ export const LandingGroupsCategories = () => {
   const categories = [
     {
       name: t('group_categories.1'),
-      icon: <Icon name="basketball" />,
+      icon: <Icon name="basketball" aria-hidden />,
     },
     {
       name: t('group_categories.2'),
-      icon: <Icon name="soccer" />,
+      icon: <Icon name="soccer" aria-hidden />,
     },
     {
       name: t('group_categories.3'),
-      icon: <Icon name="volleyball" />,
+      icon: <Icon name="volleyball" aria-hidden />,
     },
     {
       name: t('group_categories.4'),
-      icon: <Icon name="rugby" />,
+      icon: <Icon name="rugby" aria-hidden />,
     },
     {
       name: t('group_categories.5'),
-      icon: <Icon name="esports" />,
+      icon: <Icon name="esports" aria-hidden />,
     },
     {
       name: t('group_categories.6'),
-      icon: <Icon name="mma" />,
+      icon: <Icon name="mma" aria-hidden />,
     },
     {
       name: t('group_categories.7'),
-      icon: <Icon name="tennis" />,
+      icon: <Icon name="tennis" aria-hidden />,
     },
     {
       name: t('group_categories.8'),
-      icon: <Icon name="running" />,
+      icon: <Icon name="running" aria-hidden />,
     },
     {
       name: t('group_categories.9'),
-      icon: <Icon name="golf" />,
+      icon: <Icon name="golf" aria-hidden />,
     },
     {
       name: t('group_categories.10'),
-      icon: <Icon name="bike" />,
+      icon: <Icon name="bike" aria-hidden />,
     },
     {
       name: t('group_categories.11'),
-      icon: <Icon name="yoga" />,
+      icon: <Icon name="yoga" aria-hidden />,
     },
     {
       name: t('group_categories.12'),
-      icon: <Icon name="skateboard" />,
+      icon: <Icon name="skateboard" aria-hidden />,
     },
   ]
 

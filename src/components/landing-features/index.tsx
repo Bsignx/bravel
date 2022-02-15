@@ -13,17 +13,17 @@ export const LandingFeatures = () => {
     {
       title: t('features_1_title'),
       description: t('features_1_description'),
-      image: <JoinAGroupIllustration />,
+      image: <JoinAGroupIllustration aria-label={t('features_1_title')} />,
     },
     {
       title: t('features_2_title'),
       description: t('features_2_description'),
-      image: <FindAnEventIllustration />,
+      image: <FindAnEventIllustration aria-label={t('features_2_title')} />,
     },
     {
       title: t('features_3_title'),
       description: t('features_3_description'),
-      image: <StartAGroupIllustration />,
+      image: <StartAGroupIllustration aria-label={t('features_3_title')} />,
       className: 'mt-7',
     },
   ]

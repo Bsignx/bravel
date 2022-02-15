@@ -1,4 +1,5 @@
 import { LandingFeatures } from '@components/landing-features'
+import { LandingFooter } from '@components/landing-footer'
 import { LandingGroupsCategories } from '@components/landing-groups-categories'
 import { LandingHero } from '@components/landing-hero'
 import { LandingMenu } from '@components/landing-menu'
@@ -10,6 +11,7 @@ export const LandingTemplate = () => {
       <LandingHero />
       <LandingFeatures />
       <LandingGroupsCategories />
+      <LandingFooter />
     </div>
   )
 }

@@ -31,5 +31,36 @@
     "10": "Bike",
     "11": "Yoga",
     "12": "Skateboard"
+  },
+  "footer": {
+    "your_account": {
+      "title": "Your account",
+      "sub_items": {
+        "1": "Sign up",
+        "2": "Log in"
+      }
+    },
+    "discover": {
+      "title": "Discover",
+      "sub_items": {
+        "1": "Groups",
+        "2": "Events & Challenges"
+      }
+    },
+    "bravel": {
+      "title": "Bravel",
+      "sub_items": {
+        "1": "About"
+      }
+    },
+    "follow_us": {
+      "title": "Follow us",
+      "sub_items": {
+        "1": "Facebook",
+        "2": "Twitter",
+        "3": "Instagram"
+      }
+    },
+    "rights_reserved": "© 2022 Bravel, Inc. All rights reserved."
   }
 }

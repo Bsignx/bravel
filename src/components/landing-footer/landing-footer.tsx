@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next'
 
+import { Typography } from '@bsignx/bravel-ui'
 import { Container } from '@components/container'
 import { Facebook } from '@styled-icons/bootstrap/Facebook'
 import { Instagram } from '@styled-icons/bootstrap/Instagram'
 import { Youtube } from '@styled-icons/bootstrap/Youtube'
 
 import { LinkList } from './links-list'
-import { Typography } from '@bsignx/bravel-ui'
 
 export const LandingFooter = () => {
   const { t } = useTranslation('landing-page')

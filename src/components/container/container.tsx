@@ -23,7 +23,10 @@ export const Container = <E extends ElementType = 'div'>({
     <Component
       className={cls(
         `
-        container mx-auto
+        container
+        mx-auto
+        px-4
+        sm:px-2
         ${className}
       `
       )}

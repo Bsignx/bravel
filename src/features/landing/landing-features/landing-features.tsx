@@ -36,7 +36,7 @@ export const LandingFeatures = () => {
       <Typography variant="body2" color="light" className="mt-4">
         {t('features_subtitle')}
       </Typography>
-      <div className="mt-8 grid grid-cols-3 gap-14">
+      <div className="mt-8 grid grid-cols-1 gap-14 lg:grid-cols-3">
         {features.map(({ title, description, image, className = '' }) => (
           <div key={title} className={className}>
             {image}

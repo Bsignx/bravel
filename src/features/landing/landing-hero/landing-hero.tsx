@@ -10,7 +10,7 @@ export const LandingHero = () => {
 
   return (
     <Container as="section" className="mb-20 flex items-center justify-between">
-      <div className="mr-11 max-w-lg ">
+      <div className="max-w-lg lg:mr-11">
         <Typography variant="h2" color="light" className="mb-4">
           {t('hero_title')}
         </Typography>
@@ -29,7 +29,7 @@ export const LandingHero = () => {
           />
         </div>
       </div>
-      <div>
+      <div className="hidden w-full lg:block">
         <HeroIllustration className="w-full" />
       </div>
     </Container>

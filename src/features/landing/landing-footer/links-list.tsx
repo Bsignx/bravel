@@ -21,7 +21,7 @@ type LinkListProps = {
 export const LinkList = ({
   items: { itemsList, socialItem },
 }: LinkListProps) => (
-  <div className="grid grid-cols-3 grid-rows-2 gap-x-32 gap-y-16">
+  <div className="grid grid-cols-2 grid-rows-2 gap-x-16 gap-y-16 lg:grid-cols-3 lg:gap-x-32">
     {itemsList.map(({ title, subItems }) => (
       <div key={title}>
         <Typography variant="subheading" color="light" className="mb-4">

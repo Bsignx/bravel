@@ -65,7 +65,7 @@ export const LandingGroupsCategories = () => {
       <Typography variant="body2" color="light" className="mt-4">
         {t('group_categories_subtitle')}
       </Typography>
-      <div className="mt-8 grid grid-cols-4 grid-rows-3 gap-y-4 gap-x-11">
+      <div className="mt-8 grid grid-cols-2 grid-rows-3 gap-y-4 gap-x-11 lg:grid-cols-4">
         {categories.map(({ name, icon }) => (
           <div key={name} className="flex items-center">
             <div className="w-6">{icon}</div>

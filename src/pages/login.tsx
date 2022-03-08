@@ -2,6 +2,7 @@ import { NextPage } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { PageProps, withoutAuth } from 'features/auth/auth-route'
+
 import { LoginTemplate } from 'templates/login'
 
 const Login: NextPage<PageProps> = ({ auth }) => {

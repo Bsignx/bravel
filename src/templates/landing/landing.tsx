@@ -4,7 +4,7 @@ import {
   LandingGroupsCategories,
   LandingFooter,
   LandingFeatures,
-} from '@features/index'
+} from './'
 
 export const LandingTemplate = () => {
   return (

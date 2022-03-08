@@ -16,8 +16,8 @@ export const SignupTemplate = ({
   const { t } = useTranslation('signup-page')
 
   return (
-    <main className="grid h-screen grid-cols-[minmax(31.25rem,_1fr)_2fr]">
-      <div className="flex h-full flex-col place-items-center justify-center bg-gray900 px-16">
+    <main className="grid h-screen lg:grid-cols-[minmax(31.25rem,_1fr)_2fr]">
+      <div className="hidden h-full flex-col place-items-center justify-center bg-gray900 px-16 lg:flex">
         <ChampionGroupIllustration aria-hidden />
         <Typography variant="h3" color="light" className="mt-12 self-start">
           {t('main-title')}
@@ -31,7 +31,7 @@ export const SignupTemplate = ({
           {t('main-subtitle')}
         </Typography>
       </div>
-      <div className="flex h-full flex-col place-content-center justify-center bg-gray50 px-44">
+      <div className="flex h-full flex-col place-content-center justify-center bg-gray50 px-8 md:px-32">
         <SmallBravelLogo aria-label={t('logo-label')} />
         <Typography
           variant="subheading"

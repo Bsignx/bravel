@@ -17,7 +17,7 @@ export const LoginTemplate = ({
 
   return (
     <main className="grid h-screen lg:grid-cols-[minmax(31.25rem,_1fr)_2fr]">
-      <div className=" hidden h-full flex-col place-items-center justify-center bg-gray900 px-16 lg:flex">
+      <div className="hidden h-full flex-col place-items-center justify-center bg-gray900 px-16 lg:flex">
         <BasketGroupIllustration aria-hidden />
         <Typography variant="h3" color="light" className="mt-12 self-start">
           {t('main-title')}
@@ -31,7 +31,7 @@ export const LoginTemplate = ({
           {t('main-subtitle')}
         </Typography>
       </div>
-      <div className="flex h-full  flex-col place-content-center justify-center bg-gray50 px-8 md:px-32">
+      <div className="flex h-full flex-col place-content-center justify-center bg-gray50 px-8 md:px-32">
         <SmallBravelLogo aria-label={t('logo-label')} />
         <Typography
           variant="subheading"

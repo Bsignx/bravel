@@ -2,19 +2,18 @@ import { NextPage } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { PageProps, withoutAuth } from 'features/auth/auth-route'
+import { SignupTemplate } from 'templates/signup'
 
-import { LoginTemplate } from 'templates/login'
-
-const Login: NextPage<PageProps> = ({ auth }) => {
-  return <LoginTemplate auth={auth} />
+const Signup: NextPage<PageProps> = ({ auth }) => {
+  return <SignupTemplate auth={auth} />
 }
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['login-page'])),
+      ...(await serverSideTranslations(locale, ['signup-page'])),
     },
   }
 }
 
-export default withoutAuth(Login)
+export default withoutAuth(Signup)

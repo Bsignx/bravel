@@ -13,7 +13,8 @@ export const withoutAuth = (page: NextPage<PageProps>) =>
     const router = useRouter()
 
     if (auth.user) {
-      router.replace('/test')
+      router.replace('/discover')
+      
       return <h1>Loading...</h1>
     }
     return <Page auth={auth} {...props} />

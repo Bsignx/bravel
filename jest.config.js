@@ -13,5 +13,6 @@ module.exports = {
     '^@contexts(.*)$': '<rootDir>/src/contexts$1',
     '^@services(.*)$': '<rootDir>/src/services$1',
     '^@translations(.*)$': '<rootDir>/src/translations$1',
+    '^@features(.*)$': '<rootDir>/src/features$1',
   },
 }

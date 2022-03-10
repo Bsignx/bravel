@@ -46,7 +46,7 @@ export const LandingMenu = () => {
                       variant="tertiary"
                       plain
                       icon={<Globe size={20} />}
-                      className="mr-2 w-32"
+                      className="mr-2 w-36"
                     >
                       {t('translate-button')}
                     </Button>
@@ -55,7 +55,7 @@ export const LandingMenu = () => {
                 <li>
                   <Link href="/">
                     <a>
-                      <Button variant="primary" plain className="mr-2 w-24">
+                      <Button variant="primary" plain className="mr-2 w-28">
                         {t('login-button')}
                       </Button>
                     </a>
@@ -64,7 +64,7 @@ export const LandingMenu = () => {
                 <li>
                   <Link href="/">
                     <a>
-                      <Button variant="tertiary" className="w-24">
+                      <Button variant="tertiary" className="w-28">
                         {t('signup-button')}
                       </Button>
                     </a>

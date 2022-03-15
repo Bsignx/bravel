@@ -86,7 +86,7 @@ export const Navbar = () => {
             </li>
             <li className="flex items-center">
               <img
-                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                src="https://avatars.githubusercontent.com/u/52089507?v=4"
                 className="mr-4 w-9 rounded-full"
                 alt="Avatar"
               />

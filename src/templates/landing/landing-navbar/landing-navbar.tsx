@@ -9,7 +9,7 @@ import { Globe } from '@styled-icons/bootstrap/Globe'
 import { Menu as MenuIcon } from '@styled-icons/heroicons-outline/Menu'
 import { LocaleSwitcher } from 'features/translate/locale-switcher'
 
-export const LandingMenu = () => {
+export const LandingNavbar = () => {
   const { t } = useTranslation('landing-page')
 
   const [menuOpen, setMenuOpen] = useState(false)

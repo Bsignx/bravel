@@ -1,5 +1,5 @@
 import {
-  LandingMenu,
+  LandingNavbar,
   LandingHero,
   LandingGroupsCategories,
   LandingFooter,
@@ -9,7 +9,7 @@ import {
 export const LandingTemplate = () => {
   return (
     <div className="flex min-h-full flex-auto flex-col bg-gray900">
-      <LandingMenu />
+      <LandingNavbar />
       <LandingHero />
       <LandingFeatures />
       <LandingGroupsCategories />

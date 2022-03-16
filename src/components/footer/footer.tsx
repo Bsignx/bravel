@@ -8,7 +8,7 @@ import { Youtube } from '@styled-icons/bootstrap/Youtube'
 
 import { LinkList } from './links-list'
 
-export const LandingFooter = () => {
+export const Footer = () => {
   const { t } = useTranslation('landing-page')
 
   const links = [

@@ -1,8 +1,9 @@
+import { Footer } from '@components/footer'
+
 import {
   LandingNavbar,
   LandingHero,
   LandingGroupsCategories,
-  LandingFooter,
   LandingFeatures,
 } from './'
 
@@ -13,7 +14,7 @@ export const LandingTemplate = () => {
       <LandingHero />
       <LandingFeatures />
       <LandingGroupsCategories />
-      <LandingFooter />
+      <Footer />
     </div>
   )
 }

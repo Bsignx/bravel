@@ -9,10 +9,10 @@ type LayoutProps = {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <div className="flex min-h-full flex-auto flex-col bg-gray50">
       <Navbar />
       {children}
       <Footer />
-    </>
+    </div>
   )
 }

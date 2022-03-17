@@ -30,7 +30,7 @@ const FEATURE_ITEMS = [
 
 export const HomeWelcomeSection = () => {
   return (
-    <Container className="mb-16 md:mb-24 lg:mb-32">
+    <Container as="main" className="mb-16 md:mb-24 lg:mb-32">
       <Typography variant="h3" className="max-w-sm">
         It’s good to see you again, Ana!
       </Typography>

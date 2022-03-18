@@ -22,6 +22,7 @@ module.exports = {
       rose500: '#F43F5E',
       gray700: '#374151',
       gray500: '#6B7280',
+      stroke: '#D4D4D8',
     },
     fontFamily: {
       sans: ['Rubik', 'sans-serif'],

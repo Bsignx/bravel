@@ -26,7 +26,7 @@ export const LandingNavbar = () => {
                 </a>
               </Link>
               <button
-                className="text-white border-transparent bg-transparent cursor-pointer py-1 text-xl leading-none outline-none focus:outline-none lg:hidden"
+                className="text-white border-transparent bg-transparent cursor-pointer py-1 text-xl leading-none outline-none hover:opacity-50 hover:transition-opacity focus:outline-none lg:hidden"
                 type="button"
                 onClick={() => setMenuOpen(!menuOpen)}
               >

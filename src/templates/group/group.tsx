@@ -85,7 +85,7 @@ export const GroupTemplate = () => {
           </div>
         </div>
         <div className="my-6 h-px w-full bg-stroke" aria-hidden />
-        <div className="flex flex-col-reverse md:flex-row">
+        <div className="mb-16 flex flex-col-reverse md:mb-32 md:flex-row">
           <GroupTabs
             tabsTitle={['About', 'Events', 'Members']}
             activeTab={{

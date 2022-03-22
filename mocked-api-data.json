@@ -1,6 +1,10 @@
 {
-  "name": "Bruno Mariano",
-  "password": "123456",
-  "email": "bsignx@gmail.com",
-  "url_avatar": "https://avatars.githubusercontent.com/u/52089507?v=4"
+  "profile": {
+    "name": "Bruno Mariano",
+    "password": "123456",
+    "email": "bsignx@gmail.com",
+    "url_avatar": "https://avatars.githubusercontent.com/u/52089507?v=4",
+    "bio": "Non laborum occaecat anim est elit culpa eiusmod exercitation deserunt. Proident ad mollit incididunt laborum Lorem non adipisicing et velit eiusmod qui est ullamco incididunt. Officia mollit cupidatat aliquip esse eu dolore consectetur aute veniam veniam. Pariatur incididunt reprehenderit deserunt ad enim laboris voluptate irure eu. Culpa velit commodo cillum enim nisi consectetur eiusmod duis amet. Enim velit laboris sunt incididunt eu voluptate non esse eu."
+  },
+  "groups": []
 }

@@ -1,13 +1,13 @@
-import type { NextPage, GetServerSideProps } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { HomeTemplate } from 'templates/home'
+import { LandingTemplate } from 'templates/landing'
 
-const Home: NextPage = () => {
-  return <HomeTemplate />
+const Landing: NextPage = () => {
+  return <LandingTemplate />
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale as string, ['landing-page'])),
@@ -15,4 +15,4 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   }
 }
 
-export default Home
+export default Landing

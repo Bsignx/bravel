@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
-import { Typography } from '@bsignx/bravel-ui'
-import { Select } from '@components/select'
+import { Typography, Select } from '@bsignx/bravel-ui'
 import { BookmarkStar } from '@styled-icons/bootstrap/BookmarkStar'
 import { Share } from '@styled-icons/fluentui-system-regular/Share'
 

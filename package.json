@@ -19,7 +19,8 @@
     "test:e2e:ci": "start-server-and-test start 3000 cy:run"
   },
   "dependencies": {
-    "@bsignx/bravel-ui": "^1.5.3",
+    "@bsignx/bravel-ui": "^1.7.2",
+    "@hookform/resolvers": "^2.8.8",
     "@styled-icons/bootstrap": "^10.34.0",
     "@styled-icons/fluentui-system-regular": "^10.35.0",
     "@styled-icons/heroicons-outline": "^10.36.0",
@@ -29,8 +30,10 @@
     "next-i18next": "^10.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.28.1",
     "react-i18next": "^11.15.4",
-    "react-query": "^3.34.16"
+    "react-query": "^3.34.16",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.0.2",

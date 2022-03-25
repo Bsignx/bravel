@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { Typography, Select } from '@bsignx/bravel-ui'
+import { Groups } from '@domain/index'
 import { BookmarkStar } from '@styled-icons/bootstrap/BookmarkStar'
 import { Share } from '@styled-icons/fluentui-system-regular/Share'
 
@@ -88,7 +89,11 @@ const GROUPS_CONTENT = [
   },
 ]
 
-export const GroupsContent = () => {
+type GroupsContentProps = {
+  groups: Groups
+}
+
+export const GroupsContent = ({ groups }: GroupsContentProps) => {
   const [selectedDay, setSelectedDay] = useState('')
   const [selectedDistance, setSelectedDistance] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('')
@@ -124,22 +129,22 @@ export const GroupsContent = () => {
       </div>
 
       <ul className="mt-12">
-        {GROUPS_CONTENT.map(
+        {groups.map(
           ({
             category,
-            image,
+            image_url,
             description,
             distance,
             id,
             name,
-            membersNumber,
+            members_number,
             location,
           }) => (
             <li key={id} className="mb-6">
               <div className="mb-6 flex items-end justify-between">
                 <div className="flex">
                   <div className="h-20 max-w-[120px] overflow-hidden rounded md:h-40 md:max-w-[256px]">
-                    <img src={image} alt={name} />
+                    <img src={image_url} alt={name} />
                   </div>
 
                   <div className="ml-4">
@@ -163,7 +168,7 @@ export const GroupsContent = () => {
                       variant="body2"
                       className="mt-2 !text-xs !text-gray500 md:!text-base"
                     >
-                      {membersNumber} members
+                      {members_number} members
                     </Typography>
                     <Typography
                       variant="body2"

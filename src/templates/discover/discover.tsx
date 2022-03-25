@@ -2,13 +2,18 @@ import { useState } from 'react'
 
 import { Container } from '@components/container'
 import { Layout } from '@components/layout'
+import { Groups } from '@domain/index'
 
 import { DiscoverTabs } from './discover-tabs'
 import { GroupsContent } from './groups-content'
 
 const TABS_TITLE = ['Groups', 'Events']
 
-export const DiscoverTemplate = () => {
+type DiscoverTemplateProps = {
+  groups: Groups | undefined
+}
+
+export const DiscoverTemplate = ({ groups }: DiscoverTemplateProps) => {
   const [openTab, setOpenTab] = useState(1)
 
   return (
@@ -22,7 +27,7 @@ export const DiscoverTemplate = () => {
           }}
         >
           <section className={openTab === 1 ? 'block' : 'hidden'} id="link1">
-            <GroupsContent />
+            {!!groups && <GroupsContent groups={groups} />}
           </section>
           <section className={openTab === 2 ? 'block' : 'hidden'} id="link2">
             <p>todo</p>

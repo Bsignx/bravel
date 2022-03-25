@@ -23,7 +23,10 @@
       "@contexts/*": ["contexts/*"],
       "@services/*": ["services/*"],
       "@translations/*": ["translations/*"],
-      "@features/*": ["features/*"]
+      "@features/*": ["features/*"],
+      "@types/*": ["types/*"],
+      "@styles/*": ["styles/*"],
+      "@domain/*": ["domain/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

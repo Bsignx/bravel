@@ -14,5 +14,6 @@ module.exports = {
     '^@services(.*)$': '<rootDir>/src/services$1',
     '^@translations(.*)$': '<rootDir>/src/translations$1',
     '^@features(.*)$': '<rootDir>/src/features$1',
+    '^@domain(.*)$': '<rootDir>/src/domain$1',
   },
 }

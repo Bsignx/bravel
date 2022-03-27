@@ -4,6 +4,7 @@ import { Typography, Select } from '@bsignx/bravel-ui'
 import { Groups } from '@domain/index'
 import { BookmarkStar } from '@styled-icons/bootstrap/BookmarkStar'
 import { Share } from '@styled-icons/fluentui-system-regular/Share'
+import Link from 'next/link'
 
 const DAYS_OPTIONS = [
   { value: '', label: 'Select a period' },
@@ -142,42 +143,44 @@ export const GroupsContent = ({ groups }: GroupsContentProps) => {
           }) => (
             <li key={id} className="mb-6">
               <div className="mb-6 flex items-end justify-between">
-                <div className="flex">
-                  <div className="h-20 max-w-[120px] overflow-hidden rounded md:h-40 md:max-w-[256px]">
-                    <img src={image_url} alt={name} />
-                  </div>
+                <Link href={`/group/${id}`}>
+                  <a className="flex">
+                    <div className="h-20 max-w-[120px] overflow-hidden rounded md:h-40 md:max-w-[256px]">
+                      <img src={image_url} alt={name} />
+                    </div>
 
-                  <div className="ml-4">
-                    <Typography
-                      variant="subheading"
-                      className="!text-base font-medium text-gray700 md:!text-2xl"
-                    >
-                      {name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      className="mt-2 !text-xs !text-gray500 md:!text-base"
-                    >
-                      <span className="capitalize">{category}</span>
-                      {' - '}
-                      {location}
-                      {' - '}
-                      {distance}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      className="mt-2 !text-xs !text-gray500 md:!text-base"
-                    >
-                      {members_number} members
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      className="mt-4 !text-xs !text-rose500  md:!text-base"
-                    >
-                      {description}
-                    </Typography>
-                  </div>
-                </div>
+                    <div className="ml-4">
+                      <Typography
+                        variant="subheading"
+                        className="!text-base font-medium text-gray700 md:!text-2xl"
+                      >
+                        {name}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        className="mt-2 !text-xs !text-gray500 md:!text-base"
+                      >
+                        <span className="capitalize">{category}</span>
+                        {' - '}
+                        {location}
+                        {' - '}
+                        {distance}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        className="mt-2 !text-xs !text-gray500 md:!text-base"
+                      >
+                        {members_number} members
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        className="mt-4 !text-xs !text-rose500  md:!text-base"
+                      >
+                        {description}
+                      </Typography>
+                    </div>
+                  </a>
+                </Link>
                 <div className="flex items-center">
                   <Share className="mr-2 w-6 md:w-8" />
                   <BookmarkStar className="w-5 md:w-7" color="#F43F5E" />

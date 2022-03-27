@@ -7,8 +7,6 @@ import { getGroups } from '@services/http-resources'
 import { PageProps, withAuth } from 'features/auth/auth-route'
 import { DiscoverTemplate } from 'templates/discover'
 
-// update query and separate concerns
-
 const Discover: NextPage<PageProps> = ({ auth }) => {
   const { user, logout } = auth
   const { data: groups } = useQuery<Groups>('groups', getGroups, {

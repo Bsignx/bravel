@@ -15,7 +15,7 @@ export const GroupTabs = ({
   children,
 }: GroupTabsProps) => (
   <>
-    <div className="flex max-w-2xl flex-wrap">
+    <div className="flex w-full max-w-2xl flex-wrap">
       <div className="w-full">
         <ul
           className="mb-0 flex list-none flex-row flex-wrap pb-8"

@@ -4,7 +4,8 @@ import React from 'react'
 
 import { AuthContextType, useAuth } from 'features/auth/auth-context'
 
-export type PageProps = { auth: AuthContextType }
+// Update type with without optional properties
+export type PageProps = { auth: AuthContextType; groupId?: string }
 
 export const withoutAuth = (page: NextPage<PageProps>) =>
   function WithoutAuth(props: unknown) {
@@ -14,7 +15,7 @@ export const withoutAuth = (page: NextPage<PageProps>) =>
 
     if (auth.user) {
       router.replace('/discover')
-      
+
       return <h1>Loading...</h1>
     }
     return <Page auth={auth} {...props} />

@@ -1,6 +1,7 @@
 import { Typography } from '@bsignx/bravel-ui'
 import { Container } from '@components/container'
 import { Layout } from '@components/layout'
+import { MyGroups } from '@services/http-resources'
 
 const GROUPS_MEMBER = [
   {
@@ -50,60 +51,80 @@ const GROUPS_ORGANNIZER = [
   },
 ]
 
-export const MyGroupsTemplate = () => {
+type MyGroupsTemplateProps = {
+  myGroups: MyGroups | undefined
+}
+
+export const MyGroupsTemplate = ({ myGroups }: MyGroupsTemplateProps) => {
+  if (!myGroups) {
+    return null
+  }
+
+  const { asMember, asOrganizer } = myGroups
+
   return (
     <Layout>
-      <Container as="main">
+      <Container as="main" className="pb-32">
         <Typography variant="h3" className="font-medium !text-gray700">
           Your groups
         </Typography>
-        <Typography
-          variant="body1"
-          className="mt-9 mb-4 font-medium !text-gray700"
-        >
-          Organnizer
-        </Typography>
-        <ul className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-          {GROUPS_ORGANNIZER.map(({ id, image, name }) => (
-            <li key={id}>
-              <a href="#">
-                <div className="h-auto max-w-[180px] overflow-hidden rounded md:max-w-[256px]">
-                  <img src={image} alt={name} />
-                </div>
-                <Typography
-                  variant="body2"
-                  className="mt-2 font-medium !text-gray500"
-                >
-                  {name}
-                </Typography>
-              </a>
-            </li>
-          ))}
-        </ul>
-        <div className="my-6 h-px w-full bg-stroke" aria-hidden />
-        <Typography
-          variant="body1"
-          className="mt-9 mb-4 font-medium !text-gray700"
-        >
-          Member
-        </Typography>
-        <ul className="mb-32 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-          {GROUPS_MEMBER.map(({ id, image, name }) => (
-            <li key={id}>
-              <a href="#">
-                <div className="h-auto max-w-[180px] overflow-hidden rounded md:max-w-[256px]">
-                  <img src={image} alt={name} />
-                </div>
-                <Typography
-                  variant="body2"
-                  className="mt-2 font-medium !text-gray500"
-                >
-                  {name}
-                </Typography>
-              </a>
-            </li>
-          ))}
-        </ul>
+
+        {asOrganizer.length > 0 && (
+          <>
+            <Typography
+              variant="body1"
+              className="mt-9 mb-4 font-medium !text-gray700"
+            >
+              Organnizer
+            </Typography>
+            <ul className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+              {asOrganizer.map(({ id, image_url, name }) => (
+                <li key={id}>
+                  <a href="#">
+                    <div className="h-auto max-w-[180px] overflow-hidden rounded md:max-w-[256px]">
+                      <img src={image_url} alt={name} />
+                    </div>
+                    <Typography
+                      variant="body2"
+                      className="mt-2 font-medium !text-gray500"
+                    >
+                      {name}
+                    </Typography>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {asMember.length > 0 && (
+          <>
+            <div className="my-6 h-px w-full bg-stroke" aria-hidden />
+            <Typography
+              variant="body1"
+              className="mt-9 mb-4 font-medium !text-gray700"
+            >
+              Member
+            </Typography>
+            <ul className=" grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+              {asMember.map(({ id, image_url, name }) => (
+                <li key={id}>
+                  <a href="#">
+                    <div className="h-auto max-w-[180px] overflow-hidden rounded md:max-w-[256px]">
+                      <img src={image_url} alt={name} />
+                    </div>
+                    <Typography
+                      variant="body2"
+                      className="mt-2 font-medium !text-gray500"
+                    >
+                      {name}
+                    </Typography>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </Container>
     </Layout>
   )

@@ -11,10 +11,6 @@
     "created_at": "2018-01-01",
     "groups_as_member": [
       {
-        "id": "1",
-        "name": "Sport Group"
-      },
-      {
         "id": "2",
         "name": "Sport Group 2"
       }
@@ -49,8 +45,8 @@
       },
       "group_members": [
         {
-          "id": "1",
-          "name": "Bruno Mariano"
+          "id": "2",
+          "name": "John Doe"
         }
       ],
       "group_events": [
@@ -71,8 +67,8 @@
       "created_at": "2020-01-01",
       "image_url": "https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       "organized_by": {
-        "id": "1",
-        "name": "Bruno Mariano"
+        "id": "3",
+        "name": "João da Silva"
       },
       "group_members": [
         {
@@ -103,8 +99,8 @@
       },
       "group_members": [
         {
-          "id": "1",
-          "name": "Bruno Mariano"
+          "id": "4",
+          "name": "lucas Marques"
         }
       ],
       "group_events": [

@@ -12,7 +12,7 @@ const MyGroups: NextPage<PageProps> = ({ auth }) => {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   })
-  console.log(myGroups)
+
   return <MyGroupsTemplate myGroups={myGroups} />
 }
 

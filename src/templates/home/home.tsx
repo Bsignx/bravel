@@ -1,11 +1,18 @@
 import { Layout } from '@components/layout'
+import { Profile } from '@domain/index'
 
 import { HomeWelcomeSection } from './home-welcome-section'
 
-export const HomeTemplate = () => {
+type ProfileTemplateProps = {
+  profile: Profile | undefined
+}
+
+export const HomeTemplate = ({ profile }: ProfileTemplateProps) => {
+  if (!profile) return null
+
   return (
     <Layout>
-      <HomeWelcomeSection />
+      <HomeWelcomeSection profile={profile} />
     </Layout>
   )
 }

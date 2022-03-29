@@ -4,6 +4,7 @@ import {
   EventCalendarIllustration,
   JoinMarkerIllustration,
 } from '@components/illustrations'
+import { Profile } from '@domain/index'
 
 import { FeatureItem } from './feature-item'
 
@@ -14,7 +15,7 @@ const FEATURE_ITEMS = [
     icon: <EventCalendarIllustration />,
     button: {
       text: 'Discover events',
-      url: '/events',
+      url: '/discover',
     },
   },
   {
@@ -22,17 +23,23 @@ const FEATURE_ITEMS = [
     description: 'Meet new people who share your interests through training',
     icon: <JoinMarkerIllustration />,
     button: {
-      text: 'Join groups',
-      url: '/groups',
+      text: 'Discover groups',
+      url: '/discover',
     },
   },
 ]
 
-export const HomeWelcomeSection = () => {
+type HomeWelcomeSectionProps = {
+  profile: Profile
+}
+
+export const HomeWelcomeSection = ({
+  profile: { name },
+}: HomeWelcomeSectionProps) => {
   return (
     <Container as="main" className="mb-16 md:mb-24 lg:mb-32">
       <Typography variant="h3" className="max-w-sm">
-        It’s good to see you again, Ana!
+        It’s good to see you again, {name}!
       </Typography>
       <nav className="mt-12 flex flex-wrap first:mr-9 md:flex-nowrap">
         {FEATURE_ITEMS.map((item) => (

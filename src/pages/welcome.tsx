@@ -3,10 +3,11 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { dehydrate, useQuery, QueryClient } from 'react-query'
 
 import { Profile as ProfileType } from '@domain/index'
+import { PageProps, withAuth } from '@features/auth'
 import { getProfile } from '@services/http-resources'
 import { HomeTemplate } from 'templates/home'
 
-const Welcome: NextPage = () => {
+const Welcome: NextPage<PageProps> = () => {
   const { data: profile } = useQuery<ProfileType>('groups', getProfile, {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
@@ -28,4 +29,4 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   }
 }
 
-export default Welcome
+export default withAuth(Welcome)

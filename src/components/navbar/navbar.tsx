@@ -38,7 +38,7 @@ export const Navbar = () => {
     <Container as="header" className="mb-16 pt-4">
       <nav className="flex w-full flex-wrap items-center justify-between py-3 lg:flex-nowrap">
         <div className="relative flex w-full items-center justify-between lg:static lg:block lg:w-auto lg:justify-start">
-          <Link href="/landing">
+          <Link href="/welcome">
             <a>
               <BravelLogo variant="dark" />
             </a>

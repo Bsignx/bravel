@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { Button, TextField, Typography } from '@bsignx/bravel-ui'
+import { useAuth } from '@features/auth'
 import { Search } from '@styled-icons/bootstrap'
 import { ChevronDown } from '@styled-icons/bootstrap/ChevronDown'
 import { Menu as MenuIcon } from '@styled-icons/heroicons-outline/Menu'
@@ -10,7 +11,7 @@ import DropDownMenu from './drop-down-menu'
 
 import { BravelLogo, Container } from '..'
 
-const DROP_DOWN_MENU_ITENS = [
+const buildDropdownMenuItems = ({ logout }: { logout: () => void }) => [
   {
     label: 'Your groups',
     link: '/my-groups',
@@ -25,15 +26,14 @@ const DROP_DOWN_MENU_ITENS = [
   },
   {
     label: 'Log out',
-    onClick: () => {
-      console.log('logout')
-    },
+    onClick: () => logout(),
   },
 ]
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-
+  const { logout, user } = useAuth()
+  console.log(user)
   return (
     <Container as="header" className="mb-16 pt-4">
       <nav className="flex w-full flex-wrap items-center justify-between py-3 lg:flex-nowrap">
@@ -86,7 +86,7 @@ export const Navbar = () => {
             </li>
             <li className="flex items-center">
               <img
-                src="https://avatars.githubusercontent.com/u/52089507?v=4"
+                src={user?.photoURL || '/images/profile-place-holder.png'}
                 className="mr-4 w-9 rounded-full"
                 alt="Avatar"
               />
@@ -98,7 +98,7 @@ export const Navbar = () => {
                     className="hover:opacity-50 hover:transition-opacity"
                   />
                 }
-                items={DROP_DOWN_MENU_ITENS}
+                items={buildDropdownMenuItems({ logout })}
               />
             </li>
           </ul>

@@ -58,9 +58,9 @@ const DropDownMenu = ({
       </div>
 
       {(forceOpen || isOpen) && (
-        <div className="bg-white dark:bg-gray-800 absolute -right-20 mt-2 w-56 origin-top-right rounded-md shadow-lg lg:right-0">
+        <div className="bg-white dark:bg-gray-800 absolute -right-20 z-10 mt-2 w-56 origin-top-right rounded-md shadow-lg lg:right-0">
           <div
-            className={`py-1 ${withDivider ? 'divide-gray-100 divide-y' : ''}`}
+            className={` py-1 ${withDivider ? 'divide-gray-100 divide-y' : ''}`}
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="options-menu"

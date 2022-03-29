@@ -29,7 +29,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }
 
   const logout = async () => {
+    console.log('hi')
     await AuthService.logout()
+    console.log(user)
     setUser(null)
   }
   const value = { user, error, loginWithGoogle, logout, setUser }

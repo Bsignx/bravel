@@ -3,13 +3,13 @@ import { Group, Groups, Profile } from '../domain'
 const BASE_URL = 'http://localhost:8080'
 
 const getGroups = ({
-  searchCategory,
+  searchText,
 }: {
-  searchCategory?: string
+  searchText?: string
 } = {}): Promise<Groups> =>
-  fetch(
-    `${BASE_URL}/groups${searchCategory ? `?category=${searchCategory}` : ''}`
-  ).then((resp) => resp.json())
+  fetch(`${BASE_URL}/groups${searchText ? `?q=${searchText}` : ''}`).then(
+    (resp) => resp.json()
+  )
 
 const getGroup = (id: string): Promise<Group> =>
   fetch(`${BASE_URL}/groups/${id}`).then((resp) => resp.json())

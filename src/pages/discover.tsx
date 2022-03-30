@@ -14,10 +14,14 @@ const Discover: NextPage<PageProps> = ({ auth }) => {
   return <DiscoverTemplate groups={groups} />
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({
+  locale,
+  query,
+}) => {
   const queryClient = new QueryClient()
+  const searchText = query?.search as string
 
-  await queryClient.prefetchQuery('groups', () => getGroups())
+  await queryClient.prefetchQuery('groups', () => getGroups({ searchText }))
 
   return {
     props: {

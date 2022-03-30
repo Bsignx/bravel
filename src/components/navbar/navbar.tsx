@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 import { Button, TextField, Typography } from '@bsignx/bravel-ui'
@@ -35,9 +36,12 @@ export const Navbar = () => {
   const [searchText, setSearchText] = useState('')
 
   const { logout, user } = useAuth()
+  const { push } = useRouter()
 
   function handleSearchTextSubmit() {
-    console.log(searchText)
+    if (searchText) {
+      push(`/discover?search=${searchText}`)
+    }
   }
 
   return (
@@ -81,7 +85,7 @@ export const Navbar = () => {
               </div>
             </li>
             <li className="mb-4 mt-4 w-56 lg:mr-28 lg:mt-0 lg:mb-0">
-              <Link href="/">
+              <Link href="/new-group">
                 <a>
                   <Typography
                     variant="body2"

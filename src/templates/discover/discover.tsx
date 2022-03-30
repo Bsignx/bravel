@@ -18,7 +18,7 @@ export const DiscoverTemplate = ({ groups }: DiscoverTemplateProps) => {
 
   return (
     <Layout>
-      <Container>
+      <Container className="min-h-[42.8vh] pb-28">
         <DiscoverTabs
           tabsTitle={TABS_TITLE}
           activeTab={{

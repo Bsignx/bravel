@@ -32,8 +32,14 @@ const buildDropdownMenuItems = ({ logout }: { logout: () => void }) => [
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [searchText, setSearchText] = useState('')
+
   const { logout, user } = useAuth()
-  console.log(user)
+
+  function handleSearchTextSubmit() {
+    console.log(searchText)
+  }
+
   return (
     <Container as="header" className="mb-16 pt-4">
       <nav className="flex w-full flex-wrap items-center justify-between py-3 lg:flex-nowrap">
@@ -63,11 +69,14 @@ export const Navbar = () => {
                 <TextField
                   placeholder="Search for keywords"
                   inputClassName="!rounded-r-none !leading-5"
+                  value={searchText}
+                  onInputChange={(value) => setSearchText(value)}
                 />
                 <Button
                   variant="primary"
                   className="!rounded-l-none !bg-gray700 "
                   icon={<Search size={20} color="#F9FAFB" />}
+                  onClick={handleSearchTextSubmit}
                 />
               </div>
             </li>

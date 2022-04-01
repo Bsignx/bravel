@@ -6,7 +6,10 @@ type LinkListProps = {
   items: {
     itemsList: {
       title: string
-      subItems: string[]
+      subItems: {
+        text: string
+        url: string
+      }[]
     }[]
     socialItem: {
       title: string
@@ -28,14 +31,14 @@ export const LinkList = ({
           {title}
         </Typography>
         {subItems.map((subItem) => (
-          <Link href="/" key={subItem}>
+          <Link href={subItem.url} key={subItem.text}>
             <a>
               <Typography
                 variant="body2"
                 color="light"
                 className="hover:opacity-50 hover:transition-opacity"
               >
-                {subItem}
+                {subItem.text}
               </Typography>
             </a>
           </Link>

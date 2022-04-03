@@ -4,12 +4,21 @@ const BASE_URL = 'http://localhost:8080'
 
 const getGroups = ({
   searchText,
+  distanceFilter,
+  categoryFilter,
+  sortFilter,
 }: {
   searchText?: string
+  distanceFilter?: string
+  categoryFilter?: string
+  sortFilter?: string
 } = {}): Promise<Groups> =>
-  fetch(`${BASE_URL}/groups${searchText ? `?q=${searchText}` : ''}`).then(
-    (resp) => resp.json()
-  )
+  fetch(`${BASE_URL}/groups${searchText ? `?q=${searchText}` : ''}${
+    distanceFilter ? `?distance=${distanceFilter}` : ''
+  }${categoryFilter ? `?category=${categoryFilter}` : ''}${
+    sortFilter ? `?_sort=${sortFilter}` : ''
+  }
+  `).then((resp) => resp.json())
 
 const getGroup = (id: string): Promise<Group> =>
   fetch(`${BASE_URL}/groups/${id}`).then((resp) => resp.json())

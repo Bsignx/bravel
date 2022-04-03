@@ -18,10 +18,21 @@ export const getServerSideProps: GetServerSideProps = async ({
   locale,
   query,
 }) => {
-  const queryClient = new QueryClient()
-  const searchText = query?.search as string
+  const searchTextQuery = query?.search as string
+  const categoryQuery = query?.category as string
+  const distanceQuery = query?.distance as string
+  const sortQuery = query?.sort as string
 
-  await queryClient.prefetchQuery('groups', () => getGroups({ searchText }))
+  const queryClient = new QueryClient()
+
+  await queryClient.prefetchQuery('groups', () =>
+    getGroups({
+      searchText: searchTextQuery,
+      categoryFilter: categoryQuery,
+      distanceFilter: distanceQuery,
+      sortFilter: sortQuery,
+    })
+  )
 
   return {
     props: {

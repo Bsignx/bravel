@@ -1,6 +1,6 @@
 import { Group, Groups, Profile } from '../domain'
 
-const BASE_URL = 'http://localhost:8080'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
 const getGroups = ({
   searchText,

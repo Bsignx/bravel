@@ -21,7 +21,7 @@ type OrganizedBy = {
   name: string
 }
 
-type GroupMember = {
+export type GroupMember = {
   id: string
   name: string
 }
@@ -71,7 +71,7 @@ type Category = {
   name: string
 }
 
-type GroupAsMember = {
+export type GroupAsMember = {
   id: string
   name: string
 }

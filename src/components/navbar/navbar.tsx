@@ -44,6 +44,10 @@ export const Navbar = () => {
     }
   }
 
+  const handleSearchTextChange = (value: string) => {
+    setSearchText(value)
+  }
+
   return (
     <Container as="header" className="mb-16 pt-4">
       <nav className="flex w-full flex-wrap items-center justify-between py-3 lg:flex-nowrap">
@@ -74,7 +78,7 @@ export const Navbar = () => {
                   placeholder="Search for keywords"
                   inputClassName="!rounded-r-none !leading-5"
                   value={searchText}
-                  onInputChange={(value) => setSearchText(value)}
+                  onInputChange={handleSearchTextChange}
                 />
                 <Button
                   variant="primary"

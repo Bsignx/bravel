@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { Button, TextField, Typography } from '@bsignx/bravel-ui'
@@ -6,7 +8,20 @@ import { HeroIllustration } from '@components/illustrations/hero'
 import { Search } from '@styled-icons/bootstrap/Search'
 
 export const LandingHero = () => {
+  const [searchText, setSearchText] = useState('')
+
   const { t } = useTranslation('landing-page')
+  const { push } = useRouter()
+
+  function handleSearchTextSubmit() {
+    if (searchText) {
+      push(`/discover?search=${searchText}`)
+    }
+  }
+
+  const handleSearchTextChange = (value: string) => {
+    setSearchText(value)
+  }
 
   return (
     <Container as="section" className="mb-20 flex items-center justify-between">
@@ -21,11 +36,14 @@ export const LandingHero = () => {
           <TextField
             placeholder={t('hero_input_placeholder')}
             inputClassName="!rounded-r-none !leading-5"
+            value={searchText}
+            onInputChange={handleSearchTextChange}
           />
           <Button
             variant="primary"
             className="!rounded-l-none !bg-gray700 "
             icon={<Search size={20} color="#F9FAFB" />}
+            onClick={handleSearchTextSubmit}
           />
         </div>
       </div>

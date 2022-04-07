@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 import { Button, Typography } from '@bsignx/bravel-ui'
@@ -9,7 +10,9 @@ import {
   StarIcon,
 } from '@components/icons'
 import { Layout } from '@components/layout'
-import { Group } from '@domain/index'
+import { Group, Profile } from '@domain/index'
+import { useUpdateGroup } from '@features/group/hooks/useUpdateGroup'
+import { useUpdateUser } from '@features/user'
 import { Facebook } from '@styled-icons/bootstrap/Facebook'
 import { Instagram } from '@styled-icons/bootstrap/Instagram'
 import { Whatsapp } from '@styled-icons/bootstrap/Whatsapp'
@@ -18,25 +21,63 @@ import { GroupTabs } from './group-tabs'
 
 type GroupTemplateProps = {
   group: Group | undefined
+  profile: Profile | undefined
 }
 
-export const GroupTemplate = ({ group }: GroupTemplateProps) => {
+export const GroupTemplate = ({ group, profile }: GroupTemplateProps) => {
   const [openTab, setOpenTab] = useState(1)
 
-  if (!group) {
-    return null
-  }
+  const { mutateAsync: updateUser } = useUpdateUser()
+  const { mutateAsync: updateGroup } = useUpdateGroup()
+  const { push } = useRouter()
+
+  if (!group || !profile) return null
 
   const {
     description,
     distance,
-    name,
+    name: groupName,
     members_number,
     organized_by,
     image_url,
     group_members,
     group_events,
+    id: groupId,
   } = group
+
+  const { groups_as_member } = profile
+
+  const handleJoinGroup = async () => {
+    const groupAsMember = [
+      ...groups_as_member,
+      {
+        id: groupId,
+        name: groupName,
+      },
+    ]
+
+    const groupMembers = [
+      ...group_members,
+      {
+        id: profile.id,
+        name: profile.name,
+      },
+    ]
+
+    try {
+      await updateUser({
+        groupAsMember,
+      })
+      await updateGroup({
+        id: profile.id,
+        groupMembers,
+      })
+
+      push('/my-groups')
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <Layout>
@@ -46,7 +87,7 @@ export const GroupTemplate = ({ group }: GroupTemplateProps) => {
             <img src={image_url} alt="group image" className="w-full" />
           </div>
           <div className="mt-4 w-full md:mt-0 md:ml-6 lg:ml-9">
-            <Typography variant="h3">{name}</Typography>
+            <Typography variant="h3">{groupName}</Typography>
             <ul className="mt-4">
               <li className="flex items-center">
                 <MapMarkerIcon aria-hidden className="mr-3" />
@@ -145,7 +186,9 @@ export const GroupTemplate = ({ group }: GroupTemplateProps) => {
             </section>
           </GroupTabs>
           <div className="mb-6 flex items-center self-start md:mb-0 md:ml-8">
-            <Button className="mr-6 w-52">Join this group</Button>
+            <Button className="mr-6 w-52" onClick={handleJoinGroup}>
+              Join this group
+            </Button>
             <button className="flex items-center font-medium hover:opacity-50 hover:transition-opacity">
               <StarIcon aria-hidden className="mr-2" />
               Add to favorites

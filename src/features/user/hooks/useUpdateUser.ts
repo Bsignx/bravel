@@ -6,14 +6,17 @@ type UpdateUserParams = {
   groupAsMember: GroupAsMember[]
 }
 
-function updateUser({ groupAsMember }: UpdateUserParams): Promise<Profile> {
-  return fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/profile`, {
+async function updateUser({
+  groupAsMember,
+}: UpdateUserParams): Promise<Profile> {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/profile`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ groups_as_member: groupAsMember }),
-  }).then((res) => res.json())
+  })
+  return await res.json()
 }
 
 export const useUpdateUser = () => useMutation(updateUser)

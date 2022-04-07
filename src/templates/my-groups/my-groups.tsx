@@ -21,7 +21,7 @@ export const MyGroupsTemplate = ({ myGroups }: MyGroupsTemplateProps) => {
           Your groups
         </Typography>
 
-        {!asMember.length && !asMember.length && (
+        {!asMember?.length && !asMember?.length && (
           <Typography variant="body2" className="text-gray600 mt-6">
             You are not a member or organizer of any group. You can create a new
             group or join.

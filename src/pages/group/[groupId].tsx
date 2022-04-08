@@ -16,13 +16,13 @@ const Group: NextPage<GroupProps> = ({ auth, groupId = '' }) => {
     ['groups', groupId],
     () => getGroup(groupId),
     {
-      refetchOnMount: false,
+      refetchOnMount: true,
       refetchOnWindowFocus: false,
     }
   )
 
   const { data: profile } = useQuery<ProfileType>('groups', getProfile, {
-    refetchOnMount: false,
+    refetchOnMount: true,
     refetchOnWindowFocus: false,
   })
 

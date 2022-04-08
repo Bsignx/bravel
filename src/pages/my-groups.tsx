@@ -9,7 +9,7 @@ import { MyGroupsTemplate } from 'templates/my-groups'
 const MyGroups: NextPage<PageProps> = ({ auth }) => {
   const { user, logout } = auth
   const { data: myGroups } = useQuery<MyGroupType>('groups', getMyGroups, {
-    refetchOnMount: false,
+    refetchOnMount: true,
     refetchOnWindowFocus: false,
   })
 

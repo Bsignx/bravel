@@ -11,7 +11,7 @@ import {
 } from '@components/icons'
 import { Layout } from '@components/layout'
 import { Group, Profile } from '@domain/index'
-import { useUpdateGroup } from '@features/group/hooks/useUpdateGroup'
+import { useUpdateGroup } from '@features/group'
 import { useUpdateUser } from '@features/user'
 import { Facebook } from '@styled-icons/bootstrap/Facebook'
 import { Instagram } from '@styled-icons/bootstrap/Instagram'

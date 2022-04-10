@@ -117,6 +117,23 @@
           "name": "Event 1"
         }
       ]
+    },
+    {
+      "id": "cba1b974-ab60-4e96-ab6f-c3e1335be460",
+      "distance": "0 km",
+      "members_number": 1,
+      "created_at": "2022-04-10T17:04:25.925Z",
+      "organized_by": {
+        "id": "5",
+        "name": "João Mariano"
+      },
+      "group_members": [],
+      "group_events": [],
+      "name": "Testabi",
+      "category": "Group category",
+      "location": "Brazil",
+      "image_url": "https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
+      "description": "ddddddddddddddddddddddddd"
     }
   ],
   "events": [

@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { Typography, Select, Button, TextField } from '@bsignx/bravel-ui'
 import { Container } from '@components/container'
 import { Layout } from '@components/layout'
+import { useCreateGroup } from '@features/group'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
@@ -10,7 +11,7 @@ type FormData = {
   name: string
   category: string
   location: string
-  coverImageUrl?: string
+  image_url?: string
   description: string
 }
 
@@ -19,7 +20,7 @@ const newGroupSchema = yup.object({
   category: yup.string().required('Category is required'),
   location: yup.string().required('Location is required'),
   description: yup.string().required('Description is required'),
-  coverImageUrl: yup.string().url('Invalid URL'),
+  image_url: yup.string().url('Invalid URL'),
 })
 
 export const NewGroupTemplate = () => {
@@ -31,9 +32,12 @@ export const NewGroupTemplate = () => {
     resolver: yupResolver(newGroupSchema),
   })
 
-  const onSubmit = (data: FormData) => {
-    alert(JSON.stringify(data))
-  }
+  const { mutateAsync: createGroup } = useCreateGroup()
+
+  const onSubmit = (data: FormData) =>
+    createGroup({
+      group: data,
+    })
 
   return (
     <Layout>
@@ -77,9 +81,10 @@ export const NewGroupTemplate = () => {
             label="Cover image url"
             placeholder="Cover image url"
             wrapperClassName="mt-6"
-            {...register('coverImageUrl')}
-            error={errors.coverImageUrl?.message}
+            {...register('image_url')}
+            error={errors.image_url?.message}
           />
+
           <TextField
             label="Description*"
             isTextarea

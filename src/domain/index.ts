@@ -40,7 +40,7 @@ export type Group = {
   distance: string
   members_number: number
   created_at: string
-  image_url: string
+  image_url?: string
   organized_by: OrganizedBy
   group_members: GroupMember[]
   group_events?: GroupEvent[]

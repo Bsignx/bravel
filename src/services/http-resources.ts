@@ -1,4 +1,4 @@
-import { Group, Groups, Profile } from '../domain'
+import { Categories, Group, Groups, Profile } from '../domain'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
@@ -48,7 +48,7 @@ const getProfile = (): Promise<Profile> =>
 const getEvents = (): Promise<Profile> =>
   fetch(`${BASE_URL}/events`).then((resp) => resp.json())
 
-const getCategories = (): Promise<Profile> =>
+const getCategories = (): Promise<Categories> =>
   fetch(`${BASE_URL}/categories`).then((resp) => resp.json())
 
 export {

@@ -3,9 +3,11 @@ import { useForm } from 'react-hook-form'
 import { Typography, Select, Button, TextField } from '@bsignx/bravel-ui'
 import { Container } from '@components/container'
 import { Layout } from '@components/layout'
+import { Categories } from '@domain/index'
 import { useCreateGroup } from '@features/group'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { useMemo } from 'react'
 
 type FormData = {
   name: string
@@ -23,21 +25,38 @@ const newGroupSchema = yup.object({
   image_url: yup.string().url('Invalid URL'),
 })
 
-export const NewGroupTemplate = () => {
+type NewGroupTemplateProps = {
+  categories: Categories | undefined
+}
+
+export const NewGroupTemplate = ({ categories }: NewGroupTemplateProps) => {
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset: resetForm,
   } = useForm<FormData>({
     resolver: yupResolver(newGroupSchema),
   })
 
   const { mutateAsync: createGroup } = useCreateGroup()
 
-  const onSubmit = (data: FormData) =>
+  const categoriesOptions = useMemo(
+    () =>
+      categories?.map(({ name }) => ({
+        label: name,
+        value: name,
+      })) ?? [],
+    [categories]
+  )
+
+  const onSubmit = (data: FormData) => {
     createGroup({
       group: data,
     })
+
+    resetForm()
+  }
 
   return (
     <Layout>
@@ -59,12 +78,7 @@ export const NewGroupTemplate = () => {
           />
 
           <Select
-            options={[
-              {
-                label: 'Category',
-                value: 'Group category',
-              },
-            ]}
+            options={categoriesOptions}
             label="Category*"
             className="!w-full"
             {...register('category')}

@@ -41,12 +41,12 @@ export const ProfileTemplate = ({ profile }: ProfileTemplateProps) => {
               {location}
             </Typography>
             <Typography variant="body2" className="!text-gray700">
-              Attended {attended_events.length} Event
-              {attended_events.length > 1 ? 's' : ''}
+              Attended {attended_events?.length} Event
+              {attended_events?.length > 1 ? 's' : ''}
             </Typography>
             <Typography variant="body2" className="!text-gray700">
-              Participate in {groups_as_member.length} group
-              {groups_as_member.length > 1 ? 's' : ''}
+              Participate in {groups_as_member?.length} group
+              {groups_as_member?.length > 1 ? 's' : ''}
             </Typography>
             <Button className="mt-6" disabled>
               Edit profile

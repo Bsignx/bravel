@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { Typography } from '@bsignx/bravel-ui'
 import { Container } from '@components/container'
 import { Layout } from '@components/layout'
@@ -39,17 +41,19 @@ export const MyGroupsTemplate = ({ myGroups }: MyGroupsTemplateProps) => {
             <ul className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
               {asOrganizer.map(({ id, image_url, name }) => (
                 <li key={id}>
-                  <a href="#">
-                    <div className="h-auto max-w-[180px] overflow-hidden rounded md:max-w-[256px]">
-                      <img src={image_url} alt={name} />
-                    </div>
-                    <Typography
-                      variant="body2"
-                      className="mt-2 font-medium !text-gray500"
-                    >
-                      {name}
-                    </Typography>
-                  </a>
+                  <Link href={`/group/${id}`}>
+                    <a>
+                      <div className="h-auto max-w-[180px] overflow-hidden rounded md:max-w-[256px]">
+                        <img src={image_url} alt={name} />
+                      </div>
+                      <Typography
+                        variant="body2"
+                        className="mt-2 font-medium !text-gray500"
+                      >
+                        {name}
+                      </Typography>
+                    </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -68,17 +72,19 @@ export const MyGroupsTemplate = ({ myGroups }: MyGroupsTemplateProps) => {
             <ul className=" grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
               {asMember.map(({ id, image_url, name }) => (
                 <li key={id}>
-                  <a href="#">
-                    <div className="h-auto max-w-[180px] overflow-hidden rounded md:max-w-[256px]">
-                      <img src={image_url} alt={name} />
-                    </div>
-                    <Typography
-                      variant="body2"
-                      className="mt-2 font-medium !text-gray500"
-                    >
-                      {name}
-                    </Typography>
-                  </a>
+                  <Link href={`/group/${id}`}>
+                    <a>
+                      <div className="h-auto max-w-[180px] overflow-hidden rounded md:max-w-[256px]">
+                        <img src={image_url} alt={name} />
+                      </div>
+                      <Typography
+                        variant="body2"
+                        className="mt-2 font-medium !text-gray500"
+                      >
+                        {name}
+                      </Typography>
+                    </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -38,6 +38,8 @@ export type Group = {
   location: string
   category: string
   distance: string
+  latitude: string
+  longitude: string
   members_number: number
   created_at: string
   image_url?: string
@@ -56,6 +58,8 @@ export type Event = {
   name: string
   description: string
   location: string
+  latitude: string
+  longitude: string
   category: string
   distance: string
   members_number: number

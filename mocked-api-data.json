@@ -38,6 +38,8 @@
       "name": "Sport Group test",
       "description": "This is a group for sport lovers",
       "location": "Rio de Janeiro, BR",
+      "latitude": "-20.54840021291187",
+      "longitude": "-48.58488431177305",
       "category": "soccer",
       "distance": "10 km",
       "members_number": 10,
@@ -69,6 +71,8 @@
       "name": "Sport Group 2",
       "description": "This is a group for sport lovers",
       "location": "São Paulo, BR",
+      "latitude": "-20.54840021291187",
+      "longitude": "-48.58488431177305",
       "category": "mma",
       "distance": "100 km",
       "members_number": 142,
@@ -96,6 +100,8 @@
       "name": "Sport Group 3",
       "description": "This is a group for sport lovers",
       "location": "Barretos, BR",
+      "latitude": "-20.54840021291187",
+      "longitude": "-48.58488431177305",
       "category": "basketball",
       "distance": "20 km",
       "members_number": 12,
@@ -108,7 +114,7 @@
       "group_members": [
         {
           "id": "4",
-          "name": "lucas Marques"
+          "name": "Lucas Marques"
         }
       ],
       "group_events": [
@@ -132,6 +138,8 @@
       "name": "Testabi",
       "category": "Group category",
       "location": "Brazil",
+      "latitude": "-20.54840021291187",
+      "longitude": "-48.58488431177305",
       "image_url": "https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
       "description": "ddddddddddddddddddddddddd"
     },
@@ -149,6 +157,8 @@
       "name": "Clube do Bruno",
       "category": "MMA",
       "location": "Barretos, SP",
+      "latitude": "-20.54840021291187",
+      "longitude": "-48.58488431177305",
       "image_url": "https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
       "description": "YEs baby"
     },
@@ -166,6 +176,8 @@
       "name": "Test",
       "category": "Soccer",
       "location": "Barretos, SP",
+      "latitude": "-20.54840021291187",
+      "longitude": "-48.58488431177305",
       "image_url": "https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
       "description": "tes"
     }
@@ -176,6 +188,8 @@
       "name": "Event 1",
       "description": "This is a group for sport lovers",
       "location": "Rio de Janeiro, BR",
+      "latitude": "-20.54840021291187",
+      "longitude": "-48.58488431177305",
       "category": "soccer",
       "distance": "16 miles",
       "members_number": 10,
@@ -201,6 +215,8 @@
       "name": "Event 2",
       "description": "This is a group for sport lovers",
       "location": "São Paulo, BR",
+      "latitude": "-20.54840021291187",
+      "longitude": "-48.58488431177305",
       "category": "mma",
       "distance": "163 miles",
       "members_number": 12,

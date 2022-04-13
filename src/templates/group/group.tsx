@@ -97,7 +97,13 @@ export const GroupTemplate = ({ group, profile }: GroupTemplateProps) => {
                     variant="body2"
                     className="font-medium underline hover:opacity-50 hover:transition-opacity"
                   >
-                    <a href="#">Show on the map</a>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href={`https://maps.google.com/?q=${group.latitude},${group.longitude}`}
+                    >
+                      Show on the map
+                    </a>
                   </Typography>
                 </div>
               </li>

@@ -1,4 +1,6 @@
+import { useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import dynamic from 'next/dynamic'
 
 import { Typography, Select, Button, TextField } from '@bsignx/bravel-ui'
 import { Container } from '@components/container'
@@ -7,7 +9,6 @@ import { Categories } from '@domain/index'
 import { useCreateGroup } from '@features/group'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import { useMemo } from 'react'
 
 type FormData = {
   name: string
@@ -30,6 +31,7 @@ type NewGroupTemplateProps = {
 }
 
 export const NewGroupTemplate = ({ categories }: NewGroupTemplateProps) => {
+  const [position, setPosition] = useState(null)
   const {
     register,
     formState: { errors },
@@ -37,6 +39,10 @@ export const NewGroupTemplate = ({ categories }: NewGroupTemplateProps) => {
     reset: resetForm,
   } = useForm<FormData>({
     resolver: yupResolver(newGroupSchema),
+  })
+
+  const MapWithNoSSR = dynamic(() => import('./map'), {
+    ssr: false,
   })
 
   const { mutateAsync: createGroup } = useCreateGroup()
@@ -103,11 +109,12 @@ export const NewGroupTemplate = ({ categories }: NewGroupTemplateProps) => {
             label="Description*"
             isTextarea
             placeholder="Group description"
-            wrapperClassName="mt-6"
+            wrapperClassName="mt-6 mb-6"
             inputClassName="h-32"
             {...register('description')}
             error={errors.description?.message}
           />
+          <MapWithNoSSR />
           <Button type="submit" fullWidth className="mt-11">
             Create group
           </Button>

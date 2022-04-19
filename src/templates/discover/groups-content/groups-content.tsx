@@ -128,7 +128,7 @@ export const GroupsContent = ({ groups }: GroupsContentProps) => {
                         </Typography>
                         <Typography
                           variant="body2"
-                          className="mt-4 !text-xs !text-rose500  md:!text-base"
+                          className="mt-4 break-all !text-xs !text-rose500 md:!text-base"
                         >
                           {description}
                         </Typography>

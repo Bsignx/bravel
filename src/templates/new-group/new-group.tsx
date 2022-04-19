@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import dynamic from 'next/dynamic'
 
@@ -8,6 +8,7 @@ import { Layout } from '@components/layout'
 import { Categories } from '@domain/index'
 import { useCreateGroup } from '@features/group'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { LatLng } from 'leaflet'
 import * as yup from 'yup'
 
 type FormData = {
@@ -16,6 +17,10 @@ type FormData = {
   location: string
   image_url?: string
   description: string
+  position: {
+    lat: number
+    lng: number
+  }
 }
 
 const newGroupSchema = yup.object({
@@ -24,6 +29,10 @@ const newGroupSchema = yup.object({
   location: yup.string().required('Location is required'),
   description: yup.string().required('Description is required'),
   image_url: yup.string().url('Invalid URL'),
+  position: yup.object({
+    lat: yup.number().required('Position is required'),
+    lng: yup.number().required('Position is required'),
+  }),
 })
 
 type NewGroupTemplateProps = {
@@ -31,12 +40,15 @@ type NewGroupTemplateProps = {
 }
 
 export const NewGroupTemplate = ({ categories }: NewGroupTemplateProps) => {
-  const [position, setPosition] = useState(null)
+  const [position, setPosition] = useState<LatLng | null>(null)
+  console.log(position)
+
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset: resetForm,
+    setValue,
   } = useForm<FormData>({
     resolver: yupResolver(newGroupSchema),
   })
@@ -57,12 +69,20 @@ export const NewGroupTemplate = ({ categories }: NewGroupTemplateProps) => {
   )
 
   const onSubmit = (data: FormData) => {
+    console.log(data)
+
     createGroup({
       group: data,
     })
 
     resetForm()
   }
+
+  useEffect(() => {
+    if (position) {
+      setValue('position', position)
+    }
+  }, [position, setValue])
 
   return (
     <Layout>
@@ -114,7 +134,14 @@ export const NewGroupTemplate = ({ categories }: NewGroupTemplateProps) => {
             {...register('description')}
             error={errors.description?.message}
           />
-          <MapWithNoSSR />
+
+          <MapWithNoSSR position={position} onChangePosition={setPosition} />
+          {errors.position?.lat?.message && (
+            <Typography variant="body2" className="mt-2 text-xs !text-rose500">
+              {errors.position.lat.message}
+            </Typography>
+          )}
+
           <Button type="submit" fullWidth className="mt-11">
             Create group
           </Button>

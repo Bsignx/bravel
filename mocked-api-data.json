@@ -17,6 +17,14 @@
       {
         "id": "1",
         "name": "Sport Group test"
+      },
+      {
+        "id": "c8be8c65-3756-4b2e-aea0-964973b338d8",
+        "name": "Grup"
+      },
+      {
+        "id": "c8be8c65-3756-4b2e-aea0-964973b338d8",
+        "name": "Grup"
       }
     ],
     "groups_as_organizer": [
@@ -38,8 +46,10 @@
       "name": "Sport Group test",
       "description": "This is a group for sport lovers",
       "location": "Rio de Janeiro, BR",
-      "latitude": "-20.02536013185394",
-      "longitude": "-48.92572605039036",
+      "position": {
+        "lat": -22.90833,
+        "lng": -43.19639
+      },
       "category": "soccer",
       "distance": "10 km",
       "members_number": 10,
@@ -50,10 +60,6 @@
         "name": "João Mariano"
       },
       "group_members": [
-        {
-          "id": "2",
-          "name": "John Doe"
-        },
         {
           "id": "1",
           "name": "Bruno Mariano"
@@ -71,8 +77,10 @@
       "name": "Sport Group 2",
       "description": "This is a group for sport lovers",
       "location": "São Paulo, BR",
-      "latitude": "-20.54840021291187",
-      "longitude": "-48.58488431177305",
+      "position": {
+        "lat": -22.90833,
+        "lng": -43.19639
+      },
       "category": "mma",
       "distance": "100 km",
       "members_number": 142,
@@ -100,8 +108,10 @@
       "name": "Sport Group 3",
       "description": "This is a group for sport lovers",
       "location": "Barretos, BR",
-      "latitude": "-20.54840021291187",
-      "longitude": "-48.58488431177305",
+      "position": {
+        "lat": -22.90833,
+        "lng": -43.19639
+      },
       "category": "basketball",
       "distance": "20 km",
       "members_number": 12,
@@ -125,61 +135,30 @@
       ]
     },
     {
-      "id": "cba1b974-ab60-4e96-ab6f-c3e1335be460",
+      "id": "c8be8c65-3756-4b2e-aea0-964973b338d8",
       "distance": "0 km",
       "members_number": 1,
-      "created_at": "2022-04-10T17:04:25.925Z",
+      "created_at": "2022-04-19T11:29:40.950Z",
       "organized_by": {
         "id": "5",
         "name": "João Mariano"
       },
-      "group_members": [],
+      "group_members": [
+        {
+          "id": "1",
+          "name": "Bruno Mariano"
+        }
+      ],
       "group_events": [],
-      "name": "Testabi",
-      "category": "Group category",
-      "location": "Brazil",
-      "latitude": "-20.54840021291187",
-      "longitude": "-48.58488431177305",
+      "name": "Grup",
+      "category": "Basketball",
+      "location": "Frutal, MG",
       "image_url": "https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
-      "description": "ddddddddddddddddddddddddd"
-    },
-    {
-      "id": "ba98fc16-6f98-4ca6-a917-95353066c6c6",
-      "distance": "0 km",
-      "members_number": 1,
-      "created_at": "2022-04-10T17:15:22.384Z",
-      "organized_by": {
-        "id": "5",
-        "name": "João Mariano"
-      },
-      "group_members": [],
-      "group_events": [],
-      "name": "Clube do Bruno",
-      "category": "MMA",
-      "location": "Barretos, SP",
-      "latitude": "-20.54840021291187",
-      "longitude": "-48.58488431177305",
-      "image_url": "https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
-      "description": "YEs baby"
-    },
-    {
-      "id": "f205b8d9-f1fb-49d3-8f5d-19abee63441f",
-      "distance": "0 km",
-      "members_number": 1,
-      "created_at": "2022-04-10T17:16:54.719Z",
-      "organized_by": {
-        "id": "5",
-        "name": "João Mariano"
-      },
-      "group_members": [],
-      "group_events": [],
-      "name": "Test",
-      "category": "Soccer",
-      "location": "Barretos, SP",
-      "latitude": "-20.54840021291187",
-      "longitude": "-48.58488431177305",
-      "image_url": "https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
-      "description": "tes"
+      "description": "laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "position": {
+        "lat": 51.48394855271953,
+        "lng": -0.07432937622070314
+      }
     }
   ],
   "events": [
@@ -187,8 +166,10 @@
       "id": "1",
       "name": "Event 1",
       "description": "This is a group for sport lovers",
-      "location": "Rio de Janeiro, BR",
-      "latitude": "-20.54840021291187",
+      "position": {
+        "lat": -22.90833,
+        "lng": -43.19639
+      },
       "longitude": "-48.58488431177305",
       "category": "soccer",
       "distance": "16 miles",
@@ -215,8 +196,10 @@
       "name": "Event 2",
       "description": "This is a group for sport lovers",
       "location": "São Paulo, BR",
-      "latitude": "-20.54840021291187",
-      "longitude": "-48.58488431177305",
+      "position": {
+        "lat": -22.90833,
+        "lng": -43.19639
+      },
       "category": "mma",
       "distance": "163 miles",
       "members_number": 12,

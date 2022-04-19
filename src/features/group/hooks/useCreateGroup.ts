@@ -4,7 +4,12 @@ import { Group } from '@domain/index'
 import { v4 as uuidv4 } from 'uuid'
 
 type CreateGroupParams = {
-  group: Pick<
+  group: {
+    position: {
+      lat: number
+      lng: number
+    }
+  } & Pick<
     Group,
     'name' | 'description' | 'category' | 'location' | 'image_url'
   >
@@ -27,8 +32,6 @@ async function createGroup({ group }: CreateGroupParams): Promise<Group> {
       },
       group_members: [],
       group_events: [],
-      latitude: '-20.54840021291187',
-      longitude: '-48.58488431177305',
       ...group,
     }),
   })

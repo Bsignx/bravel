@@ -43,6 +43,7 @@ export const GroupTemplate = ({ group, profile }: GroupTemplateProps) => {
     group_members,
     group_events,
     id: groupId,
+    position,
   } = group
 
   const { groups_as_member } = profile
@@ -69,7 +70,7 @@ export const GroupTemplate = ({ group, profile }: GroupTemplateProps) => {
         groupAsMember,
       })
       await updateGroup({
-        id: profile.id,
+        id: groupId,
         groupMembers,
       })
 
@@ -100,7 +101,7 @@ export const GroupTemplate = ({ group, profile }: GroupTemplateProps) => {
                     <a
                       target="_blank"
                       rel="noreferrer"
-                      href={`https://maps.google.com/?q=${group.latitude},${group.longitude}`}
+                      href={`https://maps.google.com/?q=${position.lat},${position.lng}`}
                     >
                       Show on the map
                     </a>

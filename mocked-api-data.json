@@ -25,6 +25,10 @@
       {
         "id": "c8be8c65-3756-4b2e-aea0-964973b338d8",
         "name": "Grup"
+      },
+      {
+        "id": "c8be8c65-3756-4b2e-aea0-964973b338d8",
+        "name": "Grup"
       }
     ],
     "groups_as_organizer": [
@@ -147,6 +151,10 @@
         {
           "id": "1",
           "name": "Bruno Mariano"
+        },
+        {
+          "id": "1",
+          "name": "Bruno Mariano"
         }
       ],
       "group_events": [],
@@ -158,6 +166,48 @@
       "position": {
         "lat": 51.48394855271953,
         "lng": -0.07432937622070314
+      }
+    },
+    {
+      "id": "dcde996f-d0c7-4ad3-86c5-e115571f40e7",
+      "distance": "0 km",
+      "members_number": 1,
+      "created_at": "2022-04-19T12:10:39.400Z",
+      "organized_by": {
+        "id": "5",
+        "name": "João Mariano"
+      },
+      "group_members": [],
+      "group_events": [],
+      "name": "group tst",
+      "category": "Soccer",
+      "location": "Barretos, SP",
+      "image_url": "https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
+      "description": "Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem",
+      "position": {
+        "lat": 51.47646498411315,
+        "lng": -0.10900497436523439
+      }
+    },
+    {
+      "id": "5f15a9a1-5c77-4f1f-8121-0246d156f9ed",
+      "distance": "0 km",
+      "members_number": 1,
+      "created_at": "2022-04-19T12:12:14.009Z",
+      "organized_by": {
+        "id": "5",
+        "name": "João Mariano"
+      },
+      "group_members": [],
+      "group_events": [],
+      "name": "test",
+      "category": "Soccer",
+      "location": "Brazil",
+      "image_url": "https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
+      "description": "ssssssss",
+      "position": {
+        "lat": 51.48565891027461,
+        "lng": -0.09990692138671875
       }
     }
   ],

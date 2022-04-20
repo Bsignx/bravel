@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 import { Button, Typography } from '@bsignx/bravel-ui'
 import { Container } from '@components/container'
@@ -74,6 +75,7 @@ export const GroupTemplate = ({ group, profile }: GroupTemplateProps) => {
         groupMembers,
       })
 
+      toast.success('Group joined successfully')
       push('/my-groups')
     } catch (error) {
       console.log(error)

@@ -1,6 +1,7 @@
+import dynamic from 'next/dynamic'
 import { useEffect, useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import dynamic from 'next/dynamic'
+import { toast } from 'react-toastify'
 
 import { Typography, Select, Button, TextField } from '@bsignx/bravel-ui'
 import { Container } from '@components/container'
@@ -69,13 +70,17 @@ export const NewGroupTemplate = ({ categories }: NewGroupTemplateProps) => {
   )
 
   const onSubmit = (data: FormData) => {
-    console.log(data)
+    try {
+      createGroup({
+        group: data,
+      })
 
-    createGroup({
-      group: data,
-    })
-
-    resetForm()
+      resetForm()
+      setPosition(null)
+      toast.success('Group created successfully')
+    } catch (error) {
+      toast.error('Error creating group')
+    }
   }
 
   useEffect(() => {

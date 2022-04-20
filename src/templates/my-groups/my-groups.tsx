@@ -13,7 +13,7 @@ export const MyGroupsTemplate = ({ myGroups }: MyGroupsTemplateProps) => {
   if (!myGroups) {
     return null
   }
-  console.log(myGroups)
+
   const { asMember, asOrganizer } = myGroups
 
   return (

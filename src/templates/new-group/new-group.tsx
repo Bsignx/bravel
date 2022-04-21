@@ -42,7 +42,6 @@ type NewGroupTemplateProps = {
 
 export const NewGroupTemplate = ({ categories }: NewGroupTemplateProps) => {
   const [position, setPosition] = useState<LatLng | null>(null)
-  console.log(position)
 
   const {
     register,

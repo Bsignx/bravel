@@ -78,7 +78,7 @@ export const GroupTemplate = ({ group, profile }: GroupTemplateProps) => {
       toast.success('Group joined successfully')
       push('/my-groups')
     } catch (error) {
-      console.log(error)
+      toast.error('Error joining group')
     }
   }
 

@@ -195,7 +195,11 @@ export const GroupTemplate = ({ group, profile }: GroupTemplateProps) => {
             </section>
           </GroupTabs>
           <div className="mb-6 flex items-center self-start md:mb-0 md:ml-8">
-            <Button className="mr-6 w-52" onClick={handleJoinGroup}>
+            <Button
+              className="mr-6 w-52"
+              onClick={handleJoinGroup}
+              disabled={organized_by.id === profile.id}
+            >
               Join this group
             </Button>
             <button className="flex items-center font-medium hover:opacity-50 hover:transition-opacity">

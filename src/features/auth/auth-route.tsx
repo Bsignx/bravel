@@ -14,7 +14,7 @@ export const withoutAuth = (page: NextPage<PageProps>) =>
     const router = useRouter()
 
     if (auth.user) {
-      router.replace('/discover')
+      router.replace('/welcome')
 
       return <h1>Loading...</h1>
     }

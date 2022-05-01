@@ -73,10 +73,10 @@ export const Navbar = () => {
         >
           <ul className="mt-6 flex w-full list-none flex-col place-items-center items-center lg:mt-0 lg:!flex-row lg:place-items-end">
             <li className="lg:mr-14">
-              <div className="flex w-80 items-center">
+              <div className="flex w-80 items-center lg:w-96">
                 <TextField
                   placeholder="Search for keywords"
-                  inputClassName="!rounded-r-none !leading-5"
+                  inputClassName="!rounded-r-none !leading-5 w-full"
                   value={searchText}
                   onInputChange={handleSearchTextChange}
                 />

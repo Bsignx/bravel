@@ -6,6 +6,7 @@ import { toast } from 'react-toastify'
 import { Typography, Select, Button, TextField } from '@bsignx/bravel-ui'
 import { Container } from '@components/container'
 import { Layout } from '@components/layout'
+import { OpacityAnimateContainer } from '@components/opacity-animate-container'
 import { Categories } from '@domain/index'
 import { useCreateGroup } from '@features/group'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -89,68 +90,73 @@ export const NewGroupTemplate = ({ categories }: NewGroupTemplateProps) => {
   }, [position, setValue])
 
   return (
-    <Layout>
-      <Container as="main">
-        <Typography variant="h3" className="font-medium !text-gray700">
-          New Group
-        </Typography>
+    <OpacityAnimateContainer>
+      <Layout>
+        <Container as="main">
+          <Typography variant="h3" className="font-medium !text-gray700">
+            New Group
+          </Typography>
 
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="mt-9 mb-32 max-w-full md:max-w-[50%]"
-        >
-          <TextField
-            label="Name*"
-            placeholder="Group name"
-            wrapperClassName="mb-6"
-            {...register('name')}
-            error={errors.name?.message}
-          />
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="mt-9 mb-32 max-w-full md:max-w-[50%]"
+          >
+            <TextField
+              label="Name*"
+              placeholder="Group name"
+              wrapperClassName="mb-6"
+              {...register('name')}
+              error={errors.name?.message}
+            />
 
-          <Select
-            options={categoriesOptions}
-            label="Category*"
-            className="!w-full"
-            {...register('category')}
-            error={errors.category?.message}
-          />
-          <TextField
-            label="Location*"
-            placeholder="Group location"
-            wrapperClassName="mt-6"
-            {...register('location')}
-            error={errors.location?.message}
-          />
-          <TextField
-            label="Cover image url"
-            placeholder="Cover image url"
-            wrapperClassName="mt-6"
-            {...register('image_url')}
-            error={errors.image_url?.message}
-          />
+            <Select
+              options={categoriesOptions}
+              label="Category*"
+              className="!w-full"
+              {...register('category')}
+              error={errors.category?.message}
+            />
+            <TextField
+              label="Location*"
+              placeholder="Group location"
+              wrapperClassName="mt-6"
+              {...register('location')}
+              error={errors.location?.message}
+            />
+            <TextField
+              label="Cover image url"
+              placeholder="Cover image url"
+              wrapperClassName="mt-6"
+              {...register('image_url')}
+              error={errors.image_url?.message}
+            />
 
-          <TextField
-            label="Description*"
-            isTextarea
-            placeholder="Group description"
-            wrapperClassName="mt-6 mb-6"
-            inputClassName="h-32"
-            {...register('description')}
-            error={errors.description?.message}
-          />
+            <TextField
+              label="Description*"
+              isTextarea
+              placeholder="Group description"
+              wrapperClassName="mt-6 mb-6"
+              inputClassName="h-32"
+              {...register('description')}
+              error={errors.description?.message}
+            />
 
-          <MapWithNoSSR position={position} onChangePosition={setPosition} />
-          {errors.position?.lat?.message && (
-            <Typography variant="body2" className="mt-2 text-xs !text-rose500">
-              {errors.position.lat.message}
-            </Typography>
-          )}
+            <MapWithNoSSR position={position} onChangePosition={setPosition} />
+            {errors.position?.lat?.message && (
+              <Typography
+                variant="body2"
+                className="mt-2 text-xs !text-rose500"
+              >
+                {errors.position.lat.message}
+              </Typography>
+            )}
 
-          <Button type="submit" fullWidth className="mt-11">
-            Create group
-          </Button>
-        </form>
-      </Container>
-    </Layout>
+            <Button type="submit" fullWidth className="mt-11">
+              Create group
+            </Button>
+          </form>
+        </Container>
+      </Layout>
+    </OpacityAnimateContainer>
   )
 }

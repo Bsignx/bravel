@@ -5,7 +5,9 @@ import { useTranslation } from 'react-i18next'
 import { Button, TextField, Typography } from '@bsignx/bravel-ui'
 import { Container } from '@components/container'
 import { HeroIllustration } from '@components/illustrations/hero'
+import { animateOpacityVariant } from '@constants/index'
 import { Search } from '@styled-icons/bootstrap/Search'
+import { motion } from 'framer-motion'
 
 export const LandingHero = () => {
   const [searchText, setSearchText] = useState('')
@@ -25,7 +27,15 @@ export const LandingHero = () => {
 
   return (
     <Container as="section" className="mb-20 flex items-center justify-between">
-      <div className="max-w-lg lg:mr-11">
+      <motion.div
+        variants={animateOpacityVariant}
+        initial="hidden"
+        animate="visible"
+        className="max-w-lg lg:mr-11"
+        custom={{
+          delay: 0.3,
+        }}
+      >
         <Typography variant="h2" color="light" className="mb-4">
           {t('hero_title')}
         </Typography>
@@ -46,10 +56,19 @@ export const LandingHero = () => {
             onClick={handleSearchTextSubmit}
           />
         </div>
-      </div>
-      <div className="hidden w-full lg:block">
+      </motion.div>
+      <motion.div
+        variants={animateOpacityVariant}
+        initial="hidden"
+        animate="visible"
+        className="hidden w-full lg:block"
+        custom={{
+          delay: 0.5,
+        }}
+      >
+        {' '}
         <HeroIllustration className="w-full" />
-      </div>
+      </motion.div>
     </Container>
   )
 }

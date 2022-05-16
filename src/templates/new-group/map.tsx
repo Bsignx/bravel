@@ -42,6 +42,7 @@ const Map = ({ onChangePosition, position }: MapProps) => {
 
   useEffect(() => {
     getUserCurrentPosition()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

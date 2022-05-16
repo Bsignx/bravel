@@ -11,7 +11,7 @@ type GroupProps = {
   groupId?: string
 } & PageProps
 
-const Group: NextPage<GroupProps> = ({ auth, groupId = '' }) => {
+const Group: NextPage<GroupProps> = ({ groupId = '' }) => {
   const { data: group } = useQuery<GroupType>(
     ['groups', groupId],
     () => getGroup(groupId),
@@ -25,8 +25,6 @@ const Group: NextPage<GroupProps> = ({ auth, groupId = '' }) => {
     refetchOnMount: true,
     refetchOnWindowFocus: false,
   })
-
-  const { user, logout } = auth
 
   return <GroupTemplate group={group} profile={profile} />
 }

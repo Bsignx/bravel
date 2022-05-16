@@ -7,8 +7,7 @@ import { getCategories } from '@services/http-resources'
 import { PageProps, withAuth } from 'features/auth/auth-route'
 import { NewGroupTemplate } from 'templates/new-group'
 
-const NewGroup: NextPage<PageProps> = ({ auth }) => {
-  const { user, logout } = auth
+const NewGroup: NextPage<PageProps> = () => {
   const { data: categories } = useQuery<Categories>(
     'categories',
     () => getCategories(),

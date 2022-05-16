@@ -5,7 +5,7 @@ import { Container } from '@components/container'
 import { Layout } from '@components/layout'
 import { PageProps, withAuth } from 'features/auth/auth-route'
 
-const MyEvents: NextPage<PageProps> = ({ auth }) => {
+const MyEvents: NextPage<PageProps> = () => {
   return (
     <Layout>
       <Container className="min-h-[42.8vh] pb-28">Todo</Container>

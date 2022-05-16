@@ -7,8 +7,7 @@ import { getGroups } from '@services/http-resources'
 import { PageProps, withAuth } from 'features/auth/auth-route'
 import { DiscoverTemplate } from 'templates/discover'
 
-const Discover: NextPage<PageProps> = ({ auth }) => {
-  const { user, logout } = auth
+const Discover: NextPage<PageProps> = () => {
   const { data: groups } = useGetGroups()
 
   return <DiscoverTemplate groups={groups} />

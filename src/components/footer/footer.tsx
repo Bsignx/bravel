@@ -15,20 +15,20 @@ export const Footer = () => {
     {
       title: t('footer.your_account.title'),
       subItems: [
-        t('footer.your_account.sub_items.1'),
-        t('footer.your_account.sub_items.2'),
+        { text: t('footer.your_account.sub_items.1'), url: '/signup' },
+        { text: t('footer.your_account.sub_items.2'), url: '/signin' },
       ],
     },
     {
       title: t('footer.discover.title'),
       subItems: [
-        t('footer.discover.sub_items.1'),
-        t('footer.discover.sub_items.2'),
+        { text: t('footer.discover.sub_items.1'), url: '/discover' },
+        // { text: t('footer.discover.sub_items.2'), url: '/' }, todo
       ],
     },
     {
       title: t('footer.bravel.title'),
-      subItems: [t('footer.bravel.sub_items.1')],
+      subItems: [{ text: t('footer.bravel.sub_items.1'), url: '/' }],
     },
   ]
 

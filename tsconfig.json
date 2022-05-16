@@ -23,6 +23,7 @@
       "@contexts/*": ["contexts/*"],
       "@services/*": ["services/*"],
       "@translations/*": ["translations/*"],
+      "@constants/*": ["constants/*"],
       "@features/*": ["features/*"],
       "@types/*": ["types/*"],
       "@styles/*": ["styles/*"],

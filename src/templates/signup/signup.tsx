@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Button, Typography } from '@bsignx/bravel-ui'
 import { SmallBravelLogo } from '@components/bravel-logo'
 import { ChampionGroupIllustration } from '@components/illustrations'
+import { OpacityAnimateContainer } from '@components/opacity-animate-container'
 import { AuthContextType } from 'features/auth/auth-context'
 
 type SignupTemplateProps = {
@@ -16,7 +17,7 @@ export const SignupTemplate = ({
   const { t } = useTranslation('signup-page')
 
   return (
-    <main className="grid h-screen lg:grid-cols-[minmax(31.25rem,_1fr)_2fr]">
+    <OpacityAnimateContainer className="grid h-screen lg:grid-cols-[minmax(31.25rem,_1fr)_2fr]">
       <div className="hidden h-full flex-col place-items-center justify-center bg-gray900 px-16 lg:flex">
         <ChampionGroupIllustration aria-hidden />
         <Typography variant="h3" color="light" className="mt-12 self-start">
@@ -65,6 +66,6 @@ export const SignupTemplate = ({
           </Link>
         </Typography>
       </div>
-    </main>
+    </OpacityAnimateContainer>
   )
 }

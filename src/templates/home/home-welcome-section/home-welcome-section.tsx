@@ -10,20 +10,20 @@ import { FeatureItem } from './feature-item'
 
 const FEATURE_ITEMS = [
   {
-    title: 'Find events',
-    description: 'Events are happening on just about any topic you can think',
-    icon: <EventCalendarIllustration />,
-    button: {
-      text: 'Discover events',
-      url: '/discover',
-    },
-  },
-  {
     title: 'Join groups',
     description: 'Meet new people who share your interests through training',
     icon: <JoinMarkerIllustration />,
     button: {
       text: 'Discover groups',
+      url: '/discover',
+    },
+  },
+  {
+    title: 'Find events',
+    description: 'Events are happening on just about any topic you can think',
+    icon: <EventCalendarIllustration />,
+    button: {
+      text: 'Discover events',
       url: '/discover',
     },
   },

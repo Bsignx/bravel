@@ -20,7 +20,7 @@ export const LandingNavbar = () => {
         <nav className="relative flex flex-wrap items-center justify-between rounded py-3">
           <div className="container flex flex-wrap items-center justify-between lg:flex-nowrap">
             <div className="relative flex w-full items-center justify-between lg:static lg:block lg:w-auto lg:justify-start">
-              <Link href="/landing">
+              <Link href="/">
                 <a>
                   <BravelLogo />
                 </a>
@@ -53,7 +53,7 @@ export const LandingNavbar = () => {
                   </LocaleSwitcher>
                 </li>
                 <li>
-                  <Link href="/">
+                  <Link href="/login">
                     <a>
                       <Button variant="primary" plain className="mr-2 w-28">
                         {t('login-button')}
@@ -62,7 +62,7 @@ export const LandingNavbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/">
+                  <Link href="/signup">
                     <a>
                       <Button variant="tertiary" className="w-28">
                         {t('signup-button')}

@@ -2,8 +2,8 @@ import { GetServerSideProps, NextPage } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { dehydrate, useQuery, QueryClient } from 'react-query'
 
-import { Group as GroupType } from '@domain/index'
-import { getGroup } from '@services/http-resources'
+import { Group as GroupType, Profile as ProfileType } from '@domain/index'
+import { getGroup, getProfile } from '@services/http-resources'
 import { PageProps, withAuth } from 'features/auth/auth-route'
 import { GroupTemplate } from 'templates/group'
 
@@ -11,19 +11,22 @@ type GroupProps = {
   groupId?: string
 } & PageProps
 
-const Group: NextPage<GroupProps> = ({ auth, groupId = '' }) => {
+const Group: NextPage<GroupProps> = ({ groupId = '' }) => {
   const { data: group } = useQuery<GroupType>(
     ['groups', groupId],
     () => getGroup(groupId),
     {
-      refetchOnMount: false,
+      refetchOnMount: true,
       refetchOnWindowFocus: false,
     }
   )
 
-  const { user, logout } = auth
+  const { data: profile } = useQuery<ProfileType>('groups', getProfile, {
+    refetchOnMount: true,
+    refetchOnWindowFocus: false,
+  })
 
-  return <GroupTemplate group={group} />
+  return <GroupTemplate group={group} profile={profile} />
 }
 
 export const getServerSideProps: GetServerSideProps = async ({
@@ -31,8 +34,11 @@ export const getServerSideProps: GetServerSideProps = async ({
   params,
 }) => {
   const { groupId } = params as { groupId: string }
+
   const queryClient = new QueryClient()
+
   await queryClient.prefetchQuery(['groups', groupId], () => getGroup(groupId))
+  await queryClient.prefetchQuery('profile', getProfile)
 
   return {
     props: {

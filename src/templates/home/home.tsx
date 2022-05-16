@@ -1,4 +1,5 @@
 import { Layout } from '@components/layout'
+import { OpacityAnimateContainer } from '@components/opacity-animate-container'
 import { Profile } from '@domain/index'
 
 import { HomeWelcomeSection } from './home-welcome-section'
@@ -11,8 +12,10 @@ export const HomeTemplate = ({ profile }: ProfileTemplateProps) => {
   if (!profile) return null
 
   return (
-    <Layout>
-      <HomeWelcomeSection profile={profile} />
-    </Layout>
+    <OpacityAnimateContainer>
+      <Layout>
+        <HomeWelcomeSection profile={profile} />
+      </Layout>
+    </OpacityAnimateContainer>
   )
 }

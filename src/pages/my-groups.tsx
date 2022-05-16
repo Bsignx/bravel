@@ -6,10 +6,9 @@ import { getMyGroups, MyGroups as MyGroupType } from '@services/http-resources'
 import { PageProps, withAuth } from 'features/auth/auth-route'
 import { MyGroupsTemplate } from 'templates/my-groups'
 
-const MyGroups: NextPage<PageProps> = ({ auth }) => {
-  const { user, logout } = auth
+const MyGroups: NextPage<PageProps> = () => {
   const { data: myGroups } = useQuery<MyGroupType>('groups', getMyGroups, {
-    refetchOnMount: false,
+    refetchOnMount: true,
     refetchOnWindowFocus: false,
   })
 

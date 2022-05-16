@@ -21,7 +21,7 @@ type OrganizedBy = {
   name: string
 }
 
-type GroupMember = {
+export type GroupMember = {
   id: string
   name: string
 }
@@ -31,6 +31,11 @@ type GroupEvent = {
   name: string
 }
 
+type Position = {
+  lat: number
+  lng: number
+}
+
 export type Group = {
   id: string
   name: string
@@ -38,9 +43,10 @@ export type Group = {
   location: string
   category: string
   distance: string
+  position: Position
   members_number: number
   created_at: string
-  image_url: string
+  image_url?: string
   organized_by: OrganizedBy
   group_members: GroupMember[]
   group_events?: GroupEvent[]
@@ -56,6 +62,7 @@ export type Event = {
   name: string
   description: string
   location: string
+  position: Position
   category: string
   distance: string
   members_number: number
@@ -71,7 +78,7 @@ type Category = {
   name: string
 }
 
-type GroupAsMember = {
+export type GroupAsMember = {
   id: string
   name: string
 }

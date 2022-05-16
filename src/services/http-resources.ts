@@ -1,15 +1,24 @@
-import { Group, Groups, Profile } from '../domain'
+import { Categories, Group, Groups, Profile } from '../domain'
 
-const BASE_URL = 'http://localhost:8080'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
 const getGroups = ({
   searchText,
+  distanceFilter,
+  categoryFilter,
+  sortFilter,
 }: {
   searchText?: string
+  distanceFilter?: string
+  categoryFilter?: string
+  sortFilter?: string
 } = {}): Promise<Groups> =>
-  fetch(`${BASE_URL}/groups${searchText ? `?q=${searchText}` : ''}`).then(
-    (resp) => resp.json()
-  )
+  fetch(`${BASE_URL}/groups${searchText ? `?q=${searchText}` : ''}${
+    distanceFilter ? `?distance=${distanceFilter}` : ''
+  }${categoryFilter ? `?category=${categoryFilter}` : ''}${
+    sortFilter ? `?_sort=${sortFilter}` : ''
+  }
+  `).then((resp) => resp.json())
 
 const getGroup = (id: string): Promise<Group> =>
   fetch(`${BASE_URL}/groups/${id}`).then((resp) => resp.json())
@@ -39,7 +48,7 @@ const getProfile = (): Promise<Profile> =>
 const getEvents = (): Promise<Profile> =>
   fetch(`${BASE_URL}/events`).then((resp) => resp.json())
 
-const getCategories = (): Promise<Profile> =>
+const getCategories = (): Promise<Categories> =>
   fetch(`${BASE_URL}/categories`).then((resp) => resp.json())
 
 export {
